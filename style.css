@@ -11,3 +11,10 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  awaken-child
 */
+
+.awaken-navigation-container{
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
