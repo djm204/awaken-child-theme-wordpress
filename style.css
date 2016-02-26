@@ -12,9 +12,39 @@
  Text Domain:  awaken-child
 */
 
+
+.site-logo > a > img {
+    max-width: 150px;
+}
+
+.site-title a{
+    color: #e17465;
+}
 .awaken-navigation-container{
     position: absolute;
     right: 0;
     left: 0;
+    margin-top: 10px
 }
 
+.top-navigation a, .asocial-icon a {
+    color: royalblue !important;
+}
+
+.top-navigation ul {
+    float: right;
+    margin-right: -200px;
+}
+
+.top-nav{
+    background: #fff;
+}
+
+#site-navigation {
+    background: darkred !important;
+}
+
+
+#myCarousel {
+    z-index: -100;
+}

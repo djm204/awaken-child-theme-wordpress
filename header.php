@@ -80,7 +80,9 @@
 	<div class="container">
 		<div class="awaken-navigation-container">
 			<nav id="site-navigation" class="main-navigation cl-effect-10" role="navigation">
+                <div class="col-xs-2"></div>
 				<?php wp_nav_menu( array( 'theme_location' => 'main_navigation' ) ); ?>
+                <div class="col-xs-2"></div>                
 			</nav><!-- #site-navigation -->
 			<a href="#" class="navbutton" id="main-nav-button"><?php _e( 'Main Menu', 'awaken' ); ?></a>
 			<div class="responsive-mainnav"></div>
