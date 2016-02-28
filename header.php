@@ -23,7 +23,7 @@
 		
 	<?php if ( has_nav_menu( 'top_navigation' ) || get_theme_mod( 'display_social_icons', false ) ) : ?>	
 		<div class="top-nav">
-			<div class="container">
+			<div class="fluid-container">
 				<div class="row">
 					<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
 					<div class="col-xs-12 col-sm-6 col-md-8 <?php echo $rtl; ?>">
@@ -80,9 +80,9 @@
 	<div class="container">
 		<div class="awaken-navigation-container">
 			<nav id="site-navigation" class="main-navigation cl-effect-10" role="navigation">
-                <div class="col-xs-2"></div>
+                <div class="col-xs-1 col-md-1 col-lg-2"></div>
 				<?php wp_nav_menu( array( 'theme_location' => 'main_navigation' ) ); ?>
-                <div class="col-xs-2"></div>                
+                               
 			</nav><!-- #site-navigation -->
 			<a href="#" class="navbutton" id="main-nav-button"><?php _e( 'Main Menu', 'awaken' ); ?></a>
 			<div class="responsive-mainnav"></div>

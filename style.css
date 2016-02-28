@@ -20,6 +20,11 @@
 .site-title a{
     color: #e17465;
 }
+
+.site-description{
+    float: right;
+    margin-right: 10px;
+}
 .awaken-navigation-container{
     position: absolute;
     right: 0;
@@ -28,20 +33,35 @@
 }
 
 .top-navigation a, .asocial-icon a {
-    color: royalblue !important;
+    color: royalblue;
 }
 
-.top-navigation ul {
-    float: right;
-    margin-right: -200px;
+.top-navigation ul > li > a:before {
+    content: '';
 }
+
+.main-navigation a{
+    min-width: 215px;
+    text-align: center;
+    border-right: 1px solid #700000;
+}
+
+.main-navigation a{
+    border-left:  1px solid #700000;
+    
+}
+
 
 .top-nav{
     background: #fff;
 }
 
 #site-navigation {
-    background: darkred !important;
+    background: darkred;
+    background: -webkit-linear-gradient(darkred, #700000); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(darkred, #700000); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(darkred, #700000); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(darkred, #700000); /* Standard syntax */
 }
 
 
