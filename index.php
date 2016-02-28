@@ -58,6 +58,11 @@ get_header(); ?>
 	</div><!-- #primary -->
 </div><!-- .bootstrap cols -->
 <div class="col-xs-12 col-sm-6 col-md-4">
+    <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
+	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+		<?php dynamic_sidebar( 'testing_1' ); ?>
+	</div><!-- #primary-sidebar -->
+<?php endif; ?>
 	<?php get_sidebar(); ?>
 </div><!-- .bootstrap cols -->
 </div><!-- .row -->

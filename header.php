@@ -44,7 +44,7 @@
 	<?php endif; ?>
 
 	<div class="site-branding">
-		<div class="container">
+		<div class="fluid-container">
 			<div class="site-brand-container">
 				<?php  
 					
@@ -77,7 +77,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="fluid-container">
 		<div class="awaken-navigation-container">
 			<nav id="site-navigation" class="main-navigation cl-effect-10" role="navigation">
                 <div class="col-xs-1 col-md-1 col-lg-2"></div>
@@ -101,7 +101,7 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<div class="container">
+		<div class="fluid-container">
 
 	<?php 
 		/*if ( is_front_page() ) {
