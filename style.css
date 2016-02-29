@@ -68,3 +68,11 @@
 #myCarousel {
     z-index: -100;
 }
+
+.entry-content > p {
+    background: red;
+}
+
+.entry-content{
+    float: right;
+}

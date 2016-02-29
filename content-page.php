@@ -7,8 +7,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
-	<div class="entry-content">
+<div class="row">
+	<div id="widgetized-area" class="col-xs-6">
+        <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('widgetized-area')) : else : ?>
+
+        <div class="pre-widget">
+            <p><strong>Widgetized Area</strong></p>
+            <p>This panel is active and ready for you to add some widgets via the WP Admin</p>
+        </div>
+
+        <?php endif; ?>
+
+        <!-- Carousel Widget Here -->
+    </div>
+	<div class="entry-content col-xs-6">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -17,7 +29,8 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+</div><!-- row -->
+    
 	<footer class="page-entry-footer">
-		<?php edit_post_link( __( 'Edit', 'awaken' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

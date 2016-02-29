@@ -53,7 +53,7 @@
 
 					if ( $title_option == 'logo-only' && ! empty($logo) ) { ?>
 						<div class="site-logo">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="img-responsive" src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 						</div>
 					<?php } 
 

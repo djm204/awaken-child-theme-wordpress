@@ -8,8 +8,8 @@ function theme_enqueue_styles() {
 
 function awaken_child_widgets_init() {
 	register_sidebar( array(
-		'name'          =>  __('Testing Widget', 'awaken'),
-		'id'            => 'testing_1',
+		'name'          =>  'Widgetized Area',
+		'id'            => 'This is a widgetized area',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
