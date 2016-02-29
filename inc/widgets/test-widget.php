@@ -11,8 +11,8 @@ class Awaken_Test_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'awaken_test_widget', // Base ID
-			__( 'This is a test', 'awaken' ), // Name
-			array( 'description' => __( 'Testing widgets', 'awaken' ), ) // Args
+			__( 'Photo Carousel', 'awaken' ), // Name
+			array( 'description' => __( 'Photo Carousel Widget', 'awaken' ), ) // Args
 		);
 	}
 
@@ -84,15 +84,46 @@ class Awaken_Test_Widget extends WP_Widget {
 		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
 
 		echo $before_widget;
-		if ( ! empty($title) ) {
-			echo $before_title. $title . $after_title;
-		}
+		echo '<div id="my-carousel" class="carousel slide col-sm-12" data-ride="carousel" data-interval="1000">
+    
+        <!-- Indicators -->
+        <ol class="hidden carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
 
-		echo '<div class="awaken-video-widget video-container">';
-		
-		if ($vid_url) : ?>
-		<iframe width="100%" height="100%" src="http://www.youtube.com/embed/<?php echo esc_attr( $vid_url ); ?>" frameborder="0" allowfullscreen></iframe>
-		<?php endif;
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            
+            <div class="item active">
+            <img class="img-responsive" src="images/pic1.jpg" alt="Accalia">
+            </div>
+
+            <div class="item">
+            <img class="img-responsive" src="images/pic2.jpg" alt="Chania">
+            </div>
+
+            <div class="item">
+            <img class="img-responsive" src="images/pic3.jpg" alt="Flower">
+            </div>
+
+            <div class="item">
+            <img class="img-responsive" src="images/pic4.jpg" alt="Flower">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="hidden left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="hidden right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        </div>';
 
 		echo '</div>';
 

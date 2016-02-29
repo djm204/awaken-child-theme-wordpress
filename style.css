@@ -21,6 +21,10 @@
     color: #e17465;
 }
 
+.site-footer{
+    margin: 0px;
+}
+
 .site-description{
     float: right;
     margin-right: 10px;
@@ -70,9 +74,58 @@
 }
 
 .entry-content > p {
-    background: red;
 }
 
 .entry-content{
     float: right;
+    font-size: 1.4em;
 }
+
+.square-checkered-box {
+    border: 1px dashed black;
+    min-height: 200px;
+    
+}
+
+#top-right-content-widget {
+    margin-top: 20px;
+}
+
+.hentry {
+    margin: 0px;
+}
+
+
+
+/* Picture Carousel */
+
+.carousel-inner > div > img {
+     width: 100%;
+     min-height: 500px;
+     max-height: 500px;     
+     display: block;
+ }
+ .carousel-inner > div{
+     padding: 15px 0px;
+ }
+ 
+#carousel-overlay{
+    background: url('../images/pillar.png');
+    background-size: cover;
+    position: absolute;
+    right:-50px;
+    min-height: 100%;
+    min-width: 141px;
+    display:block;
+    z-index:99999;
+}
+ 
+ #my-carousel{
+     z-index: -9999;
+     margin: -20px auto 0px auto;
+ }
+ 
+ .carousel-inner {
+     padding: 0px !important;
+ }
+

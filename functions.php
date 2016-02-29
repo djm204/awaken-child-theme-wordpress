@@ -8,14 +8,16 @@ function theme_enqueue_styles() {
 
 function awaken_child_widgets_init() {
 	register_sidebar( array(
-		'name'          =>  'Widgetized Area',
-		'id'            => 'This is a widgetized area',
+		'name'          =>  'Top-left-frontpage',
+		'id'            => 'top-left-frontpage',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<div class="widget-title-container"><h1 class="widget-title">',
 		'after_title'   => '</h1></div>',
 	) );
+    
+    
 }
 add_action( 'widgets_init', 'awaken_child_widgets_init' );
 
