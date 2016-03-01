@@ -32,20 +32,7 @@ header {
 }
 
 
-header h1#logo {
-    display: inline-block;
-    height: 150px;
-    line-height: 150px;
-    font-family: "Oswald", sans-serif;
-    font-size: 60px;
-    color: white;
-    font-weight: 400;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
+
 header nav {
     display: inline-block;
     position: fixed;
@@ -111,8 +98,23 @@ header.smaller nav a {
         line-height: 35px;
     }
 }
+.site-branding{
+    display: block;
+    width: 65%;
+    margin: 0px auto;
+}
+.site-logo {
+    float: none;
+    display: block;
+    width: 500px;
+    background: rgba(0,0,0,.5);
+    border-radius: 50px;
+    margin: 5% auto;
+    padding: 20px;
+    
+}
 .site-logo > a > img {
-    max-width: 150px;
+    max-width: 450px;
 }
 
 .site-title a{

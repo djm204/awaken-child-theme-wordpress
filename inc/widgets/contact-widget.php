@@ -5,14 +5,14 @@
  *
  */
 
-class Awaken_Test_Widget extends WP_Widget {
+class Desiratech_Contact_Widget extends WP_Widget {
 
 	/* Register Widget with WordPress*/
 	function __construct() {
 		parent::__construct(
-			'awaken_test_widget', // Base ID
-			__( 'Photo Carousel', 'awaken' ), // Name
-			array( 'description' => __( 'Photo Carousel Widget', 'awaken' ), ) // Args
+			'desiratech_contact_widget', // Base ID
+			__( 'Desiratech: Contact Info', 'awaken' ), // Name
+			array( 'description' => __( 'Contact Info Widget', 'awaken' ), ) // Args
 		);
 	}
 
@@ -35,14 +35,7 @@ class Awaken_Test_Widget extends WP_Widget {
 
 	?>
 
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'awaken' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr($instance['title']); ?>"/>
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'vid_url' ); ?>"><?php _e( 'Youtube Video ID', 'awaken' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'vid_url' ); ?>" name="<?php echo $this->get_field_name( 'vid_url' ); ?>" value="<?php echo esc_attr($instance['vid_url']); ?>"/>
-		</p>
+		
 
 	<?php
 
@@ -84,49 +77,39 @@ class Awaken_Test_Widget extends WP_Widget {
 		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
 
 		echo $before_widget;
-		echo '<div id="my-carousel" class="carousel slide col-sm-12" data-ride="carousel" data-interval="7000">
-    
-        <!-- Indicators -->
-        <ol class="hidden carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            
-            <div class="item active">
-            <img class="img-responsive" src="images/pic1.jpg" alt="Accalia">
-            </div>
-
-            <div class="item">
-            <img class="img-responsive" src="images/pic2.jpg" alt="Chania">
-            </div>
-
-            <div class="item">
-            <img class="img-responsive" src="images/pic3.jpg" alt="Flower">
-            </div>
-
-            <div class="item">
-            <img class="img-responsive" src="images/pic4.jpg" alt="Flower">
-            </div>
+		echo ' <!---- contact --->
+    <div id="contact" class="contact">
+        <div class="container-fluid">
+            <div class="contact-grids">
+                <div >
+                    <div class="contact-left wow fadeInRight" data-wow-delay="0.4s">
+                        <h3>Contact Us</h3>
+                        <label>Don\'t be shy, drop us an email and say hello! We would love to hear from you :)</label>
+                        <div class="contact-left-grids">
+                            <div class="col-md-6">
+                                <div class="contact-left-grid">
+                                    <p><span class="c-mobi"> </span>(204) 298-9476</p>
+                                    <p><span class="c-twitter"> </span><a href="#">@desiratech</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-right-grid">
+                                    <p><span class="c-msg"> </span><a href="mailto:info@desiratech.com">info@desiratech.com</a></p>
+                                    <p><span class="c-face"> </span><a href="https://facebook.com/desiratechdev">facebook.com/DesiratechDev</a></p>
+                                    <p><span class="c-pin"> </span><a href="https://linkedin.com/in/djm204">linkedin.com/in/djm204</a></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </div>
+               
+           
         </div>
+    </div>
+    <!---- contact --->';
 
-        <!-- Left and right controls -->
-        <a class="hidden left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="hidden right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        </div>';
-
-		echo '</div>';
-
+	
 	echo $after_widget;
 	}
 
@@ -134,7 +117,7 @@ class Awaken_Test_Widget extends WP_Widget {
 }
 
 // register widget
-function register_Awaken_Test_Widget() {
-    register_widget( 'Awaken_Test_Widget' );
+function register_Desiratech_Contact_Widget() {
+    register_widget( 'Desiratech_Contact_Widget' );
 }
-add_action( 'widgets_init', 'register_Awaken_Test_Widget' );
+add_action( 'widgets_init', 'register_Desiratech_Contact_Widget' );
