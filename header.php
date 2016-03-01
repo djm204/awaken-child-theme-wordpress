@@ -13,10 +13,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<div id="topLogo">hello</div>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'awaken' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">

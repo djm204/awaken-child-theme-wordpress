@@ -21,6 +21,6 @@ function awaken_child_widgets_init() {
 }
 add_action( 'widgets_init', 'awaken_child_widgets_init' );
 
-require get_stylesheet_directory() . '/inc/widgets/test-widget.php';
+require get_stylesheet_directory() . '/inc/widgets/photo-widget.php';
 
 ?>

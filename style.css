@@ -109,23 +109,59 @@
      padding: 15px 0px;
  }
  
-#carousel-overlay{
-    background: url('../images/pillar.png');
-    background-size: cover;
+.carousel-overlay{
+    background: url('images/overlay.png');
     position: absolute;
-    right:-50px;
     min-height: 100%;
-    min-width: 141px;
+    min-width: 100%;
     display:block;
-    z-index:99999;
+    z-index:1;
 }
  
  #my-carousel{
-     z-index: -9999;
      margin: -20px auto 0px auto;
  }
  
+ #my-carousel h2 {
+     position: absolute;
+     z-index: 2;
+     margin-top: -40px;
+     margin-left: 125px;
+ }
+ 
  .carousel-inner {
+     z-index: -1;     
      padding: 0px !important;
  }
+ .carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+ /* Google Maps */
+ 
+#spanishclub {
+    width: 100%;
+    height: 400px;
+    border: 1px #aaa solid;
+}
 

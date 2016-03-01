@@ -84,7 +84,7 @@ class Awaken_Test_Widget extends WP_Widget {
 		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
 
 		echo $before_widget;
-		echo '<div id="my-carousel" class="carousel slide col-sm-12" data-ride="carousel" data-interval="1000">
+		echo '<div id="my-carousel" class="carousel slide col-sm-12" data-ride="carousel" data-interval="7000">
     
         <!-- Indicators -->
         <ol class="hidden carousel-indicators">
