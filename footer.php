@@ -68,6 +68,8 @@
 </div><!-- #page -->
 <?php wp_footer(); ?>
 <script>
+        new WOW().init();
+    
 function initialize() {
   var infowindow = new google.maps.InfoWindow({
     content:"Hello World!"

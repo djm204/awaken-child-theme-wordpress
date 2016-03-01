@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'awaken' ); ?></a>
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header wow fadeIn" role="banner">
 		
 	<?php if ( has_nav_menu( 'top_navigation' ) || get_theme_mod( 'display_social_icons', false ) ) : ?>	
 		<div class="top-nav">
