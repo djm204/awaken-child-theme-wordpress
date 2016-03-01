@@ -15,25 +15,27 @@
 /* header */
 
 header {
+    background: url('images/spainlandscape.jpg') 50% 0 no-repeat fixed;
+    background-position-y: -350px;
+    background-size: cover;
     width: 100%;
-    height: 150px;
+    height: 800px;
     overflow: hidden;
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
-    background-color: #0683c9;
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     -ms-transition: height 0.3s;
     -o-transition: height 0.3s;
     transition: height 0.3s;
 }
+
+
 header h1#logo {
     display: inline-block;
     height: 150px;
     line-height: 150px;
-    float: left;
     font-family: "Oswald", sans-serif;
     font-size: 60px;
     color: white;
@@ -46,7 +48,7 @@ header h1#logo {
 }
 header nav {
     display: inline-block;
-    float: right;
+    position: fixed;
 }
 header nav a {
     line-height: 150px;
@@ -63,14 +65,14 @@ header nav a {
 header nav a:hover {
     color: white;
 }
-header.smaller {
-    height: 75px;
-}
-header.smaller h1#logo {
+
+
+header.smaller > .topnav > .fluid-container > .row > .spanish-club-logo-topnav {
     width: 150px;
-    height: 75px;
+    height: 275px;
     line-height: 75px;
     font-size: 30px;
+    background: red;
 }
 header.smaller nav a {
     line-height: 75px;
@@ -96,9 +98,7 @@ header.smaller nav a {
         line-height: 50px;
         margin: 0 10px;
     }
-    header.smaller {
-        height: 75px;
-    }
+
     header.smaller h1#logo {
         height: 40px;
         line-height: 40px;
@@ -117,6 +117,8 @@ header.smaller nav a {
 
 .site-title a{
     color: #e17465;
+    text-align: center;
+    display: block;
 }
 
 .site-footer{
@@ -133,9 +135,16 @@ header.smaller nav a {
     left: 0;
     margin-top: 10px
 }
-
+.top-navigation{
+    z-index: 99999;
+    background: darkred;
+    background: -webkit-linear-gradient(darkred, #700000); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(darkred, #700000); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(darkred, #700000); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(darkred, #700000); 
+}
 .top-navigation a, .asocial-icon a {
-    color: royalblue;
+    color: white;
 }
 
 .top-navigation ul > li > a:before {
@@ -153,25 +162,13 @@ header.smaller nav a {
     
 }
 
-
 .top-nav{
     background: #fff;
-}
-
-#site-navigation {
-    background: darkred;
-    background: -webkit-linear-gradient(darkred, #700000); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(darkred, #700000); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(darkred, #700000); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(darkred, #700000); /* Standard syntax */
 }
 
 
 #myCarousel {
     z-index: -100;
-}
-
-.entry-content > p {
 }
 
 .entry-content{
@@ -193,7 +190,10 @@ header.smaller nav a {
     margin: 0px;
 }
 
-
+/* Content */
+#content {
+    margin-top: 50px;
+}
 
 /* Picture Carousel */
 
@@ -205,11 +205,12 @@ header.smaller nav a {
      border: 2px solid #f88;
  }
  .carousel-inner > div{
-     padding: 15px 0px;
+     padding: 0px;
  }
  
 .carousel-overlay{
-    background: url('images/overlay.png');
+    background: url('images/overlay.png') no-repeat;
+    background-size: contain;
     position: absolute;
     min-height: 100%;
     min-width: 100%;
@@ -223,13 +224,19 @@ header.smaller nav a {
  
  #my-carousel h2 {
      position: absolute;
-     z-index: 2;
-     margin-top: -40px;
-     margin-left: 125px;
+     z-index: 122;
+     padding-top: 10px;
+     margin-top: -50px;
+     margin-left: 50px;
+     text-align: center;
+     background: white;
+     opacity: .9;
+     width: 100%;
+     height: 60px;
+     
  }
  
  .carousel-inner {
-     z-index: -1;     
      padding: 0px !important;
  }
  .carousel-fade .carousel-inner .item {
@@ -256,6 +263,8 @@ header.smaller nav a {
 .carousel-fade .carousel-control {
   z-index: 2;
 }
+
+
  /* Google Maps */
  
 #spanishclub {

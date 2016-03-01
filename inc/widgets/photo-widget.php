@@ -94,18 +94,17 @@ class Desiratech_Photocarousel_Widget extends WP_Widget {
             <li data-target="#myCarousel" data-slide-to="2"></li>
             <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
-
+            
+        
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-            <div class="carousel-overlay"></div>
             
             <img class="img-responsive" src="images/pic1.jpg" alt="Folklorama Dancers">
             <h2>Folklorama 2015</h2>            
             </div>
 
             <div class="item">
-            <div class="carousel-overlay"></div>
             
             <img class="img-responsive" src="images/pic2.jpg" alt="NYE @ Spanish Club">
             <h2>NYE @ The Spanish Club of Winnipeg</h2>
@@ -113,14 +112,12 @@ class Desiratech_Photocarousel_Widget extends WP_Widget {
             </div>
 
             <div class="item">
-            <div class="carousel-overlay"></div>
             
             <img class="img-responsive" src="images/pic3.jpg" alt="Dia De La Hispanidad">
             <h2>Dia De La Hispanidad</h2>
             </div>
 
             <div class="item">
-            <div class="carousel-overlay"></div>
             
             <img class="img-responsive" src="images/pic4.jpg" alt="Paella">
             <h2>Paella</h2>            

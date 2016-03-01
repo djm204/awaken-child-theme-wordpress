@@ -19,7 +19,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="topLogo">hello</div>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'awaken' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
@@ -29,17 +28,28 @@
 			<div class="fluid-container">
 				<div class="row">
 					<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
-					<div class="col-xs-12 col-sm-6 col-md-8 <?php echo $rtl; ?>">
+					<div class="col-xs-12 col-sm-12 col-md-12 <?php echo $rtl; ?>">
 						<?php if ( has_nav_menu( 'top_navigation' ) ) : ?>
 							<nav id="top-navigation" class="top-navigation" role="navigation">
 								<?php wp_nav_menu( array( 'theme_location' => 'top_navigation' ) ); ?>
+                                <?php awaken_socialmedia(); ?>			
+                                
 							</nav><!-- #site-navigation -->	
+                            <div class="awaken-search-button-icon"></div>
+                            <div class="awaken-search-box-container">
+                                <div class="awaken-search-box">
+                                    <form action="<?php echo esc_url( home_url( '/' ) ); ?>" id="awaken-search-form" method="get">
+                                        <input type="text" value="" name="s" id="s" />
+                                        <input type="submit" value="<?php _e( 'Search', 'awaken' ); ?>" />
+                                    </form>
+                                </div><!-- th-search-box -->
+                            </div><!-- .th-search-box-container -->
 							<a href="#" class="navbutton" id="top-nav-button"><?php _e( 'Top Menu', 'awaken' ); ?></a>
 							<div class="responsive-topnav"></div>
-						<?php endif; ?>			
+						<?php endif; ?>
 					</div><!-- col-xs-12 col-sm-6 col-md-8 -->
 					<div class="col-xs-12 col-sm-6 col-md-4">
-						<?php awaken_socialmedia(); ?>
+						
 					</div><!-- col-xs-12 col-sm-6 col-md-4 -->
 				</div><!-- row -->
 			</div><!-- .container -->
@@ -78,29 +88,9 @@
 				<?php } ?>
 			</div><!-- .site-brand-container -->
 		</div>
+        
 	</div>
 
-	<div class="fluid-container">
-		<div class="awaken-navigation-container">
-			<nav id="site-navigation" class="main-navigation cl-effect-10" role="navigation">
-                <div class="col-xs-1 col-md-1 col-lg-2"></div>
-				<?php wp_nav_menu( array( 'theme_location' => 'main_navigation' ) ); ?>
-                               
-			</nav><!-- #site-navigation -->
-			<a href="#" class="navbutton" id="main-nav-button"><?php _e( 'Main Menu', 'awaken' ); ?></a>
-			<div class="responsive-mainnav"></div>
-
-			<div class="awaken-search-button-icon"></div>
-			<div class="awaken-search-box-container">
-				<div class="awaken-search-box">
-					<form action="<?php echo esc_url( home_url( '/' ) ); ?>" id="awaken-search-form" method="get">
-						<input type="text" value="" name="s" id="s" />
-						<input type="submit" value="<?php _e( 'Search', 'awaken' ); ?>" />
-					</form>
-				</div><!-- th-search-box -->
-			</div><!-- .th-search-box-container -->
-		</div><!-- .awaken-navigation-container-->
-	</div><!-- .container -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
