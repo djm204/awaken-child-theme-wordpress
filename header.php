@@ -14,6 +14,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
 <?php wp_head(); ?>
 </head>
 
@@ -104,7 +105,21 @@
 
 	<div id="content" class="site-content">
 		<div class="fluid-container">
-
+<script>function init() {
+    window.addEventListener('scroll', function(e){
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 300,
+            header = document.querySelector("header");
+        if (distanceY > shrinkOn) {
+            classie.add(header,"smaller");
+        } else {
+            if (classie.has(header,"smaller")) {
+                classie.remove(header,"smaller");
+            }
+        }
+    });
+}
+window.onload = init();</script>
 	<?php 
 		/*if ( is_front_page() ) {
 			if ( get_theme_mod( 'display_slider', 1 ) == '1' ) {

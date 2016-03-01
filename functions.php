@@ -21,6 +21,16 @@ function awaken_child_widgets_init() {
 }
 add_action( 'widgets_init', 'awaken_child_widgets_init' );
 
+
+function awaken_child_scripts() {
+    
+    wp_register_script( 'add-classie-js', get_stylesheet_directory_uri() . '/js/classie.js', array(), '', true );
+	wp_enqueue_script( 'add-classie-js' );    
+    
+
+}
+add_action( 'wp_enqueue_scripts', 'awaken_child_scripts' );
+
 require get_stylesheet_directory() . '/inc/widgets/photo-widget.php';
 
 ?>
