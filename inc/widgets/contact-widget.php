@@ -83,21 +83,13 @@ class Desiratech_Contact_Widget extends WP_Widget {
             <div class="contact-grids">
                 <div >
                     <div class="contact-left wow fadeInRight" data-wow-delay="0.4s">
-                        <h3>Contact Us</h3>
-                        <label>Don\'t be shy, drop us an email and say hello! We would love to hear from you :)</label>
+                        <h3>Contact Info</h3>
                         <div class="contact-left-grids">
                             <div class="col-md-6">
-                                <div class="contact-left-grid">
-                                    <p><span class="c-mobi"> </span>(204) 298-9476</p>
-                                    <p><span class="c-twitter"> </span><a href="#">@desiratech</a></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="contact-right-grid">
-                                    <p><span class="c-msg"> </span><a href="mailto:info@desiratech.com">info@desiratech.com</a></p>
-                                    <p><span class="c-face"> </span><a href="https://facebook.com/desiratechdev">facebook.com/DesiratechDev</a></p>
-                                    <p><span class="c-pin"> </span><a href="https://linkedin.com/in/djm204">linkedin.com/in/djm204</a></p>
-                                </div>
+                                    <p><span class="address-contact"> Address </span> 677 Selkirk Ave.<br/>Winnipeg, Manitoba, R2W 2N4</p>
+                                    <p><span class="phone-contact"> </span><a href="tel:2045867615">204-586-7615</a></p>
+                                    <p><span class="email-contact"> </span><a href="mailto:info@spanishclubofwinnipeg.ca">info@spanishclubofwinnipeg.ca</a></p>
+                                    <p><span class="c-face-contact"> </span><a href="https://facebook.com/friendsSpanishClubWinnipeg">facebook.com/friendsSpanishClubWinnipeg</a></p>
                             </div>
                             <div class="clearfix"> </div>
                         </div>

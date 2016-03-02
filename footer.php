@@ -55,10 +55,20 @@
 						echo wp_kses_post( $footer_copyright_text ); 
 					} else { ?>
 						<div class="col-xs-12 col-md-6 col-sm-6">				
-							<?php printf( __( 'Theme: %1$s by %2$s.', 'awaken' ), 'Awaken', '<a href="http://www.themezhut.com" rel="designer">ThemezHut</a>' ); ?>
+							<!--- copy-right ---->
+
+                <p>&copy; The Spanish Club of Winnipeg 1978-
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                </p>
+
+                <a href="#" id="toTop"> <span id="upToTop" class="glyphicon glyphicon-chevron-up back-to-top"> </span></a>
+
+            <!--- copy-right ---->
 						</div>
 						<div class="col-xs-12 col-md-6 col-sm-6 fr">
-							<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'awaken' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'awaken' ), 'WordPress' ); ?></a>
+                            Designed by <a href="http://dev.desiratech.com">Desiratech Development</a>
 						</div>
 				<?php } ?>
 				</div><!-- .row -->

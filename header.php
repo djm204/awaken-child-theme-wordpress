@@ -22,7 +22,7 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'awaken' ); ?></a>
     <?php if ( has_nav_menu( 'top_navigation' ) || get_theme_mod( 'display_social_icons', false ) ) : ?>	
-		<div class="top-nav wow bounceInDown" data-wow-delay="0.2s">
+		<div class="top-nav" >
 			<div class="fluid-container">
 				<div class="row">
 					<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>

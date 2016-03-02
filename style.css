@@ -204,6 +204,22 @@ header.smaller nav a {
     margin-top: 50px;
 }
 
+.programs-grids{
+    padding: 70px;
+}
+
+.program-button, .program-button-red{
+    border: 1px solid black;
+    padding: 10px;
+    background: yellow;
+    color: black;
+}
+
+.program-button-red{
+    background: #700000;
+    color: white;
+}
+
 /* Picture Carousel */
 
 .carousel-inner > div > img {
