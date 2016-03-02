@@ -80,21 +80,16 @@ class Desiratech_Contact_Widget extends WP_Widget {
 		echo ' <!---- contact --->
     <div id="contact" class="contact">
         <div class="container-fluid">
-            <div class="contact-grids">
-                <div >
-                    <div class="contact-left wow fadeInRight" data-wow-delay="0.4s">
+           
+                    <div class="contact-left wow fadeInRight " data-wow-delay="0.4s">
                         <h3>Contact Info</h3>
-                        <div class="contact-left-grids">
                             <div class="col-md-6">
-                                    <p><span class="address-contact"> Address </span> 677 Selkirk Ave.<br/>Winnipeg, Manitoba, R2W 2N4</p>
-                                    <p><span class="phone-contact"> </span><a href="tel:2045867615">204-586-7615</a></p>
-                                    <p><span class="email-contact"> </span><a href="mailto:info@spanishclubofwinnipeg.ca">info@spanishclubofwinnipeg.ca</a></p>
-                                    <p><span class="c-face-contact"> </span><a href="https://facebook.com/friendsSpanishClubWinnipeg">facebook.com/friendsSpanishClubWinnipeg</a></p>
+                                    <p><span class="contact-icon glyphicon glyphicon-home"></span>  Address 677 Selkirk Ave.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Winnipeg, Manitoba, R2W 2N4</p>
+                                    <p><span class="contact-icon glyphicon glyphicon-earphone"> </span><a href="tel:2045867615">204-586-7615</a></p>
+                                    <p><span class="contact-icon glyphicon glyphicon-envelope"> </span><a href="mailto:info@spanishclubofwinnipeg.ca">info@spanishclubofwinnipeg.ca</a></p>
+                                    <p><span class="contact-icon c-face-contact"> </span><a href="https://facebook.com/friendsSpanishClubWinnipeg">facebook.com/friendsSpanishClubWinnipeg</a></p>
                             </div>
-                            <div class="clearfix"> </div>
                         </div>
-                    </div>
-                </div>
                
            
         </div>

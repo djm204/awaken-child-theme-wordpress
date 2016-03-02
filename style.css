@@ -211,12 +211,12 @@ header.smaller nav a {
 .program-button, .program-button-red{
     border: 1px solid black;
     padding: 10px;
-    background: yellow;
+    background: #f7dc28;
     color: black;
 }
 
 .program-button-red{
-    background: #700000;
+    background: #d5374a;
     color: white;
 }
 
@@ -290,7 +290,10 @@ header.smaller nav a {
 }
 
 
-
+/*contact us */
+.contact-icon{
+    margin-right:10px;
+}
 
  /* Google Maps */
  
