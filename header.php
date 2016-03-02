@@ -21,16 +21,14 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'awaken' ); ?></a>
-	<header id="masthead" class="site-header wow fadeIn" role="banner">
-		
-	<?php if ( has_nav_menu( 'top_navigation' ) || get_theme_mod( 'display_social_icons', false ) ) : ?>	
-		<div class="top-nav">
+    <?php if ( has_nav_menu( 'top_navigation' ) || get_theme_mod( 'display_social_icons', false ) ) : ?>	
+		<div class="top-nav wow bounceInDown" data-wow-delay="0.2s">
 			<div class="fluid-container">
 				<div class="row">
 					<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
 					<div class="col-xs-12 col-sm-12 col-md-12 <?php echo $rtl; ?>">
 						<?php if ( has_nav_menu( 'top_navigation' ) ) : ?>
-							<nav id="top-navigation" class="top-navigation" role="navigation">
+							<nav id="top-navigation " class="top-navigation" role="navigation">
 								<?php wp_nav_menu( array( 'theme_location' => 'top_navigation' ) ); ?>
                                 <?php awaken_socialmedia(); ?>			
                                 
@@ -55,8 +53,11 @@
 			</div><!-- .container -->
 		</div>
 	<?php endif; ?>
+	<header id="masthead" class="site-header " role="banner">
+		
+	
 
-	<div class="site-branding">
+	<div class="site-branding wow fadeIn" data-wow-delay="0.7s">
 		<div class="fluid-container">
 			<div class="site-brand-container">
 				<?php  
@@ -65,8 +66,8 @@
 					$title_option = get_theme_mod( 'site_title_option', 'text-only' );
 
 					if ( $title_option == 'logo-only' && ! empty($logo) ) { ?>
-						<div class="site-logo">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="img-responsive" src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+						<div class="site-logo wow bounceInDown" data-wow-delay="0.7s">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="img-responsive src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 						</div>
 					<?php } 
 

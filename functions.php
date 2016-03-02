@@ -24,7 +24,7 @@ add_action( 'widgets_init', 'awaken_child_widgets_init' );
 
 function awaken_child_scripts() {
     
-    wp_enqueue_style( 'bootstrap.css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'all' );
+    wp_enqueue_style( 'animate.css', get_stylesheet_directory_uri() . '/css/animate.css', array(), 'all' );
 
     
     wp_register_script( 'add-classie-js', get_stylesheet_directory_uri() . '/js/classie.js', array(), '', true );

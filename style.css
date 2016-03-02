@@ -24,7 +24,7 @@ header {
     overflow: hidden;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: -1;
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     -ms-transition: height 0.3s;
@@ -33,12 +33,10 @@ header {
 }
 
 
-
-header nav {
-    display: inline-block;
+.top-navigation {
     position: fixed;
 }
-header nav a {
+.top-navigation a {
     line-height: 75px !important;
     margin-left: 20px;
     color: #9fdbfc;
@@ -57,6 +55,16 @@ header nav a:hover {
 
 header.smaller nav a {
     line-height: 75px;
+}
+
+@media all and (max-width: 1200px){
+    #top-nav-button {
+        display: inline-block;
+    }
+    
+    .top-navigation{
+        display: none;
+    }
 }
 
 @media all and (max-width: 660px) {
@@ -264,6 +272,8 @@ header.smaller nav a {
 .carousel-fade .carousel-control {
   z-index: 2;
 }
+
+
 
 
  /* Google Maps */
