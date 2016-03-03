@@ -14,7 +14,7 @@
 get_header(); ?>
 <div class="row">
 	<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
-	<div class="col-xs-12 col-sm-12 col-md-8 <?php echo $rtl ?>">
+	<div class="col-xs-12 col-sm-12 col-md-12 <?php echo $rtl ?>">
 	<div id="primary" class="content-area">
         <?= is_front_page(); ?>
 		<main id="main" class="site-main" role="main">

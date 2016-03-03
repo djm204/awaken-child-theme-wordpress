@@ -78,12 +78,11 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 
 		echo $before_widget;
 		echo ' <!---- contact --->
-    <div id="events" class="events">
-        <div class="container-fluid">
+        <div id="events" class="container-fluid">
            
                     <div class="wow fadeInTop " data-wow-delay="0.4s">
                         <h3>Upcoming Events</h3>
-                            <ul class="col-md-6">
+                            <ul class="col-md-12">
                                     <li></span><a href="#">Event 1: 1/2/2016</a></li>
                                     <li></span><a href="#">Event 2: 4/22/2016</a></li>
                                     <li></span><a href="#">Event 3: 6/25/2016</a></li>
@@ -93,7 +92,6 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
                
            
         </div>
-    </div>
     <!---- contact --->';
 
 	

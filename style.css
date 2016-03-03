@@ -12,6 +12,13 @@
  Text Domain:  awaken-child
 */
 
+/*General*/
+.row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+
 /* header */
 
 header {
@@ -97,6 +104,7 @@ header.smaller nav a {
     margin-top: 10px
 }
 .top-navigation{
+    left: 0;
     z-index: 99999;
     background: darkred;
     background: -webkit-linear-gradient(darkred, #700000); /* For Safari 5.1 to 6.0 */
@@ -258,15 +266,12 @@ header.smaller nav a {
   z-index: 2;
 }
 
-
 /*contact us */
 .contact-icon{
     margin-right:10px;
 }
 
-
 /*Events */
-
 #events ul li{
     padding: 5px;
     border: 1px solid #ddd;
@@ -347,3 +352,5 @@ header.smaller nav a {
         line-height: 35px;
     }
 }
+
+

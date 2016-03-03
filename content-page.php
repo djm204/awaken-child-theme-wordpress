@@ -17,7 +17,7 @@
 
         <!-- Carousel Widget Here -->
     </div>
-	<div class="entry-content col-xs-12 col-md-6">
+	<div class="entry-content col-xs-12 <?php if(is_front_page()):?>col-md-6<?php endif ?>">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
