@@ -8,7 +8,7 @@
 
             <!--- programs-grids --->
             <div class="programs-grids text-center">
-                <div class="col-md-4">
+                <div class="col-sm-12 col-md-4">
                     <div class="program wow bounceIn" data-wow-delay="0.4s">
                         <h3 class="program-button-red">Become A Member</h3>
                         <p>
@@ -16,7 +16,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-12 col-md-4">
                     <div class="program wow bounceIn" data-wow-delay="0.4s">
                         <h3 class="program-button">Programs & Registration</h3>
                         <p>
@@ -26,10 +26,14 @@ Cibo audire honestatis ea sit, quo delectus cotidieque an. Usu ei mediocrem cont
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-12 col-md-4">
                     <div class="program wow bounceIn" data-wow-delay="0.4s">
                         <h3 class="program-button-red">Photo Gallery</h3>
                         <div class="thumb-wrapper">
+                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
+                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
+                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
+                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
                             <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
                             <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
                             <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />

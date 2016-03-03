@@ -20,11 +20,9 @@ header {
     position: relative;
     background-size: cover;
     width: 100%;
-    height: 800px;
     overflow: hidden;
     top: 0;
     left: 0;
-    z-index: -1;
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     -ms-transition: height 0.3s;
@@ -57,49 +55,7 @@ header.smaller nav a {
     line-height: 75px;
 }
 
-@media all and (max-width: 1200px){
-    #top-nav-button {
-        display: inline-block;
-    }
-    
-    .top-navigation{
-        display: none;
-    }
-}
 
-@media all and (max-width: 660px) {
-    header h1#logo {
-        display: block;
-        float: none;
-        margin: 0 auto;
-        height: 100px;
-        line-height: 100px;
-        text-align: center;
-    }
-    header nav {
-        display: block;
-        float: none;
-        height: 50px;
-        text-align: center;
-        margin: 0 auto;
-    }
-    header nav a {
-        line-height: 50px;
-        margin: 0 10px;
-    }
-
-    header.smaller h1#logo {
-        height: 40px;
-        line-height: 40px;
-        font-size: 30px;
-    }
-    header.smaller nav {
-        height: 35px;
-    }
-    header.smaller nav a {
-        line-height: 35px;
-    }
-}
 .site-branding{
     display: block;
     width: 65%;
@@ -167,10 +123,6 @@ header.smaller nav a {
     
 }
 
-.responsive-topnav{
-    position: absolute;
-    width: 100%;
-}
 .top-nav{
     background: #fff;
 }
@@ -207,8 +159,10 @@ header.smaller nav a {
 
 /*Programs*/
 
+
+
 .programs-grids{
-    padding: 70px;
+    padding-top: 50px;
 }
 
 .program-button, .program-button-red{
@@ -310,6 +264,13 @@ header.smaller nav a {
     margin-right:10px;
 }
 
+
+/*Events */
+
+#events ul li{
+    padding: 5px;
+    border: 1px solid #ddd;
+}
  /* Google Maps */
  
 #spanishclub {
@@ -331,3 +292,58 @@ header.smaller nav a {
     margin-right: 20px;
 }
 
+/*Mobile Res*/
+@media all and (max-width: 1200px){
+    #top-nav-button {
+        display: inline-block;
+    }
+    
+    .top-navigation{
+        display: none;
+    }
+}
+
+@media all and (max-width: 770px){
+    .site-logo > a > img {
+        max-width: 250px;
+    }
+    
+    .site-logo{
+        width: 300px;
+        
+    }
+}
+
+@media all and (max-width: 660px) {
+    header h1#logo {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+    header nav {
+        display: block;
+        float: none;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    header nav a {
+        line-height: 50px;
+        margin: 0 10px;
+    }
+
+    header.smaller h1#logo {
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px;
+    }
+    header.smaller nav {
+        height: 35px;
+    }
+    header.smaller nav a {
+        line-height: 35px;
+    }
+}

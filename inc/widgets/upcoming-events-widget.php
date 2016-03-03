@@ -78,17 +78,17 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 
 		echo $before_widget;
 		echo ' <!---- contact --->
-    <div id="contact" class="contact">
+    <div id="events" class="events">
         <div class="container-fluid">
            
-                    <div class="contact-left wow fadeInRight " data-wow-delay="0.4s">
+                    <div class="wow fadeInTop " data-wow-delay="0.4s">
                         <h3>Upcoming Events</h3>
-                            <div class="col-md-6">
-                                    <p><span class="contact-icon glyphicon glyphicon-home"></span>  Address 677 Selkirk Ave.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Winnipeg, Manitoba, R2W 2N4</p>
-                                    <p><span class="contact-icon glyphicon glyphicon-earphone"> </span><a href="tel:2045867615">204-586-7615</a></p>
-                                    <p><span class="contact-icon glyphicon glyphicon-envelope"> </span><a href="mailto:info@spanishclubofwinnipeg.ca">info@spanishclubofwinnipeg.ca</a></p>
-                                    <p><span class="contact-icon c-face-contact"> </span><a href="https://facebook.com/friendsSpanishClubWinnipeg">facebook.com/friendsSpanishClubWinnipeg</a></p>
-                            </div>
+                            <ul class="col-md-6">
+                                    <li></span><a href="#">Event 1: 1/2/2016</a></li>
+                                    <li></span><a href="#">Event 2: 4/22/2016</a></li>
+                                    <li></span><a href="#">Event 3: 6/25/2016</a></li>
+                                    <li></span><a href="#">Event 4: 7/23/2016</a></li>
+                            </ul>
                         </div>
                
            

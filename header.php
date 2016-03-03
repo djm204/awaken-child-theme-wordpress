@@ -53,6 +53,8 @@
 			</div><!-- .container -->
 		</div>
 	<?php endif; ?>
+    
+    <?php if(is_front_page()) :?>
 	<header id="masthead" class="site-header " role="banner">
 		
 	
@@ -93,7 +95,7 @@
 	</div>
 
 	</header><!-- #masthead -->
-
+    <?php endif ?>
 	<div id="content" class="site-content">
 		<div class="fluid-container">
 <script>function init() {
