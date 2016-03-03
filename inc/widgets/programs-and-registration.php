@@ -5,14 +5,14 @@
  *
  */
 
-class Desiratech_Featured_Photos_Widget extends WP_Widget {
+class Desiratech_Programs_Registration extends WP_Widget {
 
 	/* Register Widget with WordPress*/
 	function __construct() {
 		parent::__construct(
-			'desiratech_featured_photos_widget', // Base ID
-			__( 'Desiratech: Featured Photos Widget', 'awaken' ), // Name
-			array( 'description' => __( 'Featured Photos Widget', 'awaken' ), ) // Args
+			'desiratech_programs_registration', // Base ID
+			__( 'Desiratech: Programs Registration', 'awaken' ), // Name
+			array( 'description' => __( 'Programs Registration Widget', 'awaken' ), ) // Args
 		);
 	}
 
@@ -84,24 +84,13 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
 		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
 
 		echo $before_widget;
-		echo '
-         <h3>Photo Gallery</h3>
-                        <div class="thumb-wrapper">
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
+		echo '<h3 class="program-button">Programs & Registration</h3>
+                        <p>
                             
-                        </div>
-                        <div class="text-right" ><a href="#">More</a>...</div>';
+Cibo audire honestatis ea sit, quo delectus cotidieque an. Usu ei mediocrem contentiones, dico sententiae efficiantur no eos. Ex per quis sale. Elit latine ad nec, sit in vivendum imperdiet tincidunt. Has dolore possim albucius ne, facilis persequeris sea ad.
+                            <a href="#">Click here</a> for more information.
+                        </p>
+                    </div>';
 
 
 	echo $after_widget;
@@ -111,7 +100,7 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
 }
 
 // register widget
-function register_Desiratech_Featured_Photos_Widget() {
-    register_widget( 'Desiratech_Featured_Photos_Widget' );
+function register_Desiratech_Programs_Registration() {
+    register_widget( 'Desiratech_Programs_Registration' );
 }
-add_action( 'widgets_init', 'register_Desiratech_Featured_Photos_Widget' );
+add_action( 'widgets_init', 'register_Desiratech_Programs_Registration' );

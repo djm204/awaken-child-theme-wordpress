@@ -77,8 +77,7 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
 
 		echo $before_widget;
-		echo ' <!---- contact --->
-        
+		echo '<!---- contact --->        
                         <h3 class="program-button-red">Upcoming Events</h3>
                             <ul id="events" class="col-md-12">
                                     <li></span><a href="#">Event 1: 1/2/2016</a></li>

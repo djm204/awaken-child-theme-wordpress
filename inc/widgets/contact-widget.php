@@ -78,10 +78,7 @@ class Desiratech_Contact_Widget extends WP_Widget {
 
 		echo $before_widget;
 		echo ' <!---- contact --->
-    <div id="contact" class="contact">
-        <div class="container-fluid">
-           
-                    <div class="contact-left wow fadeInRight " data-wow-delay="0.4s">
+   
                         <h3>Contact Info</h3>
                             <ul class="col-md-12">
                                     <li><span class="contact-icon glyphicon glyphicon-home"></span>  Address 677 Selkirk Ave.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Winnipeg, Manitoba, R2W 2N4</li>
@@ -91,9 +88,7 @@ class Desiratech_Contact_Widget extends WP_Widget {
                             </ul>
                         </div>
                
-           
-        </div>
-    </div>
+
     <!---- contact --->';
 
 	

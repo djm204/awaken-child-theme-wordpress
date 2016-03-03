@@ -73,6 +73,10 @@ add_action( 'wp_enqueue_scripts', 'awaken_child_scripts' );
 require get_stylesheet_directory() . '/inc/widgets/photo-widget.php';
 require get_stylesheet_directory() . '/inc/widgets/contact-widget.php';
 require get_stylesheet_directory() . '/inc/widgets/upcoming-events-widget.php';
+require get_stylesheet_directory() . '/inc/widgets/featured-photos-widget.php';
+require get_stylesheet_directory() . '/inc/widgets/programs-and-registration.php';
+
+
 
 
 ?>

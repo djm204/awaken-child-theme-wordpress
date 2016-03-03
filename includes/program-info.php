@@ -27,13 +27,7 @@
                     
                         <?php endif; ?>
                         
-                        <h3 class="program-button">Programs & Registration</h3>
-                        <p>
-                            
-Cibo audire honestatis ea sit, quo delectus cotidieque an. Usu ei mediocrem contentiones, dico sententiae efficiantur no eos. Ex per quis sale. Elit latine ad nec, sit in vivendum imperdiet tincidunt. Has dolore possim albucius ne, facilis persequeris sea ad.
-                            <a href="#">Click here</a> for more information.
-                        </p>
-                    </div>
+                        
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="program wow bounceIn" data-wow-delay="0.4s">
@@ -41,20 +35,7 @@ Cibo audire honestatis ea sit, quo delectus cotidieque an. Usu ei mediocrem cont
                             <div class="col-xs-12 square-checkered-box"></div>
                     
                         <?php endif; ?>
-                        <h3 class="program-button-red">Photo Gallery</h3>
-                        <div class="thumb-wrapper">
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                            <img class="photo-gal-thumb" src="<?= get_stylesheet_directory_uri()?>/images/spainlandscape.jpg" />
-                        </div>
-                        <div class="text-right" ><a href="#">More</a>...</div>
+                       
                     </div>
                 </div>
                 <div class="clearfix"> </div>
