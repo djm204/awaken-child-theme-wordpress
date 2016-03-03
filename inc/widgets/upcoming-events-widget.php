@@ -78,20 +78,20 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 
 		echo $before_widget;
 		echo ' <!---- contact --->
-        <div id="events" class="container-fluid">
-           
-                    <div class="wow fadeInTop " data-wow-delay="0.4s">
-                        <h3>Upcoming Events</h3>
-                            <ul class="col-md-12">
+        
+                        <h3 class="program-button-red">Upcoming Events</h3>
+                            <ul id="events" class="col-md-12">
                                     <li></span><a href="#">Event 1: 1/2/2016</a></li>
                                     <li></span><a href="#">Event 2: 4/22/2016</a></li>
                                     <li></span><a href="#">Event 3: 6/25/2016</a></li>
                                     <li></span><a href="#">Event 4: 7/23/2016</a></li>
                             </ul>
                         </div>
-               
+               <div id="folklorama">
+                    <a href="/folklorama"><img src="' . get_stylesheet_directory_uri() . '/images/folklorama-logo.png" alt="Folklorama Logo" /></a>
+               </div>
            
-        </div>
+        
     <!---- contact --->';
 
 	

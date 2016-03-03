@@ -18,6 +18,9 @@
     margin-right: 0px !important;
 }
 
+ul {
+    margin: 0 !important;
+}
 
 /* header */
 
@@ -271,11 +274,25 @@ header.smaller nav a {
     margin-right:10px;
 }
 
-/*Events */
-#events ul li{
+#events{
     padding: 5px;
-    border: 1px solid #ddd;
+    list-style: none;
+    border: 1px solid #333;
 }
+
+/*Events */
+#events li{
+    padding: 5px;
+    border: 1px solid #333;
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 5px;
+}
+
+#events li:last-of-type{
+    margin:0;
+}
+
  /* Google Maps */
  
 #spanishclub {

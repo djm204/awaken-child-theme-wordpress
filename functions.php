@@ -17,6 +17,39 @@ function awaken_child_widgets_init() {
 		'after_title'   => '</h1></div>',
 	) );
     
+    register_sidebar( array(
+		'name'          =>  'Program-Info-1',
+		'id'            => 'program-info-1',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget-title-container"><h1 class="widget-title">',
+		'after_title'   => '</h1></div>',
+	) );
+    
+    
+    register_sidebar( array(
+		'name'          =>  'Program-Info-2',
+		'id'            => 'program-info-2',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget-title-container"><h1 class="widget-title">',
+		'after_title'   => '</h1></div>',
+	) );
+    
+    
+    register_sidebar( array(
+		'name'          =>  'Program-Info-3',
+		'id'            => 'program-info-3',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget-title-container"><h1 class="widget-title">',
+		'after_title'   => '</h1></div>',
+	) );
+    
+    
     
 }
 add_action( 'widgets_init', 'awaken_child_widgets_init' );
