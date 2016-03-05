@@ -85,6 +85,8 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
 
 		echo $before_widget;
 		echo '
+        
+        <div class="col-xs-12">
          <h3>Photo Gallery</h3>
                         <div class="thumb-wrapper">
                             <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
@@ -101,7 +103,9 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
                             <img class="photo-gal-thumb" src="'.get_stylesheet_directory_uri().'/images/spainlandscape.jpg" />
                             
                         </div>
-                        <div class="text-right" ><a href="#">More</a>...</div>';
+                        <div class="text-right" ><a href="#">More</a>...</div>
+                        
+                        </div>';
 
 
 	echo $after_widget;

@@ -28,8 +28,11 @@ class Desiratech_Contact_Widget extends WP_Widget {
 	public function form( $instance ) {
 		//print_r($instance);
 		$defaults = array(
-			'title'		=>	__( 'Featured Video', 'awaken' ),
-			'vid_url'	=>	'SQEQr7c0-dw'
+			'email'		=>	'info@spanishclubofwinnipeg.ca',
+			'facebook'	=>	'friendsSpanishClubWinnipeg'
+            'address'		=>	__( 'Featured Video', 'awaken' ),
+			'phone-number'	=>	'SQEQr7c0-dw'
+           
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
@@ -77,19 +80,16 @@ class Desiratech_Contact_Widget extends WP_Widget {
 		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
 
 		echo $before_widget;
-		echo ' <!---- contact --->
-   
+		echo '<div id="contact-info" class="col-xs-12">
+
                         <h3>Contact Info</h3>
                             <ul class="col-md-12">
-                                    <li><span class="contact-icon glyphicon glyphicon-home"></span>  Address 677 Selkirk Ave.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Winnipeg, Manitoba, R2W 2N4</li>
+                                    <li><span class="contact-icon glyphicon glyphicon-home"></span>  Address 677 Selkirk Ave.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Winnipeg, Manitoba, R2W 2N4</li>
                                     <li><span class="contact-icon glyphicon glyphicon-earphone"> </span><a href="tel:2045867615">204-586-7615</a></li>
                                     <li><span class="contact-icon glyphicon glyphicon-envelope"> </span><a href="mailto:info@spanishclubofwinnipeg.ca">info@spanishclubofwinnipeg.ca</a></li>
-                                    <li><span class="contact-icon c-face-contact"> </span><a href="https://facebook.com/friendsSpanishClubWinnipeg">facebook.com/friendsSpanishClubWinnipeg</a></li>
+                                    <li><span class="contact-icon fa fa-facebook"> </span><a href="https://facebook.com/friendsSpanishClubWinnipeg">facebook.com/friendsSpanishClubWinnipeg</a></li>
                             </ul>
-                        </div>
-               
-
-    <!---- contact --->';
+                </div>';
 
 	
 	echo $after_widget;
