@@ -29,15 +29,30 @@ class Desiratech_Contact_Widget extends WP_Widget {
 		//print_r($instance);
 		$defaults = array(
 			'email'		=>	'info@spanishclubofwinnipeg.ca',
-			'facebook'	=>	'friendsSpanishClubWinnipeg'
-            'address'		=>	__( 'Featured Video', 'awaken' ),
-			'phone-number'	=>	'SQEQr7c0-dw'
+			'facebook'	=>	'friendsSpanishClubWinnipeg',
+            'address'		=>	'Address 677 Selkirk Ave. Winnipeg, Manitoba, R2W 2N4',
+			'phone-number'	=>	'204-586-7615'
            
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
 	?>
-
+        <p>
+			<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e( 'Address:'); ?></label>
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" value="<?php echo esc_attr($instance['address']); ?>"/>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'phone-number' ); ?>"><?php _e( 'Phone Number:'); ?></label>
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'phone-number' ); ?>" name="<?php echo $this->get_field_name( 'phone-number' ); ?>" value="<?php echo esc_attr($instance['phone-number']); ?>"/>
+		</p>
+         <p>
+			<label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e( 'Email:'); ?></label>
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" value="<?php echo esc_attr($instance['email']); ?>"/>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Facebook:'); ?></label>
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" value="<?php echo esc_attr($instance['facebook']); ?>"/>
+		</p>
 		
 
 	<?php
@@ -58,8 +73,11 @@ class Desiratech_Contact_Widget extends WP_Widget {
 	
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );	
-		$instance[ 'vid_url' ]	= strip_tags( $new_instance[ 'vid_url' ] );
+		$instance[ 'address' ] = strip_tags( $new_instance[ 'address' ] );	
+		$instance[ 'phone-number' ]	= strip_tags( $new_instance[ 'phone-number' ] );
+		$instance[ 'email' ]	= strip_tags( $new_instance[ 'email' ] );
+		$instance[ 'facebook' ]	= strip_tags( $new_instance[ 'facebook' ] );
+        
 		return $instance;
 	}
 
@@ -76,18 +94,20 @@ class Desiratech_Contact_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract($args);
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';	
-		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
+		$address = ( ! empty( $instance['address'] ) ) ? $instance['address'] : '';	
+		$phone_number = ( ! empty( $instance['phone-number'] ) ) ? $instance['phone-number'] : '';
+		$email = ( ! empty( $instance['email'] ) ) ? $instance['email'] : '';
+		$facebook = ( ! empty( $instance['facebook'] ) ) ? $instance['facebook'] : '';
 
 		echo $before_widget;
 		echo '<div id="contact-info" class="col-xs-12">
 
                         <h3>Contact Info</h3>
                             <ul class="col-md-12">
-                                    <li><span class="contact-icon glyphicon glyphicon-home"></span>  Address 677 Selkirk Ave.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Winnipeg, Manitoba, R2W 2N4</li>
-                                    <li><span class="contact-icon glyphicon glyphicon-earphone"> </span><a href="tel:2045867615">204-586-7615</a></li>
-                                    <li><span class="contact-icon glyphicon glyphicon-envelope"> </span><a href="mailto:info@spanishclubofwinnipeg.ca">info@spanishclubofwinnipeg.ca</a></li>
-                                    <li><span class="contact-icon fa fa-facebook"> </span><a href="https://facebook.com/friendsSpanishClubWinnipeg">facebook.com/friendsSpanishClubWinnipeg</a></li>
+                                    <li><span class="contact-icon glyphicon glyphicon-home"></span>'.$address.'</li>
+                                    <li><span class="contact-icon glyphicon glyphicon-earphone"> </span><a href="tel:'.$phone_number.'">'.$phone_number.'</a></li>
+                                    <li><span class="contact-icon glyphicon glyphicon-envelope"> </span><a href="mailto:'.$email.'">'.$email.'</a></li>
+                                    <li><span class="contact-icon fa fa-facebook"> </span><a href="https://facebook.com/'.$facebook.'">facebook.com/'.$facebook.'</a></li>
                             </ul>
                 </div>';
 
