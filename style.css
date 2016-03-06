@@ -189,17 +189,27 @@ header.smaller nav a {
 }
 
 .photo-gal-thumb{
+    display: inline-block;
     border: 1px solid black;
     min-width: 100px;
     max-width: 100px;
     min-height: 100px;
     max-height: 100px;
     margin-top: 5px;
+    margin-left: 4px;
+    
 }
 
-.thumb-wrapper{
-    text-align: center;
+.photo-gal-thumb:first-of-type{
+    margin-left: none;
 }
+
+.photo-gal-thumb img{
+    display: block;
+    width: 100%;
+}
+
+
 /* Picture Carousel */
 
 .carousel-inner > div > img {

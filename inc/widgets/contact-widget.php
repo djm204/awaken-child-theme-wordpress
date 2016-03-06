@@ -110,7 +110,6 @@ class Desiratech_Contact_Widget extends WP_Widget {
                                     <li><span class="contact-icon fa fa-facebook"> </span><a href="https://facebook.com/'.$facebook.'">facebook.com/'.$facebook.'</a></li>
                             </ul>
                 </div>';
-
 	
 	echo $after_widget;
 	}

@@ -76,6 +76,8 @@ require get_stylesheet_directory() . '/inc/widgets/upcoming-events-widget.php';
 require get_stylesheet_directory() . '/inc/widgets/featured-photos-widget.php';
 require get_stylesheet_directory() . '/inc/widgets/programs-and-registration-widget.php';
 require get_stylesheet_directory() . '/inc/widgets/become-a-member-widget.php';
+require get_stylesheet_directory() . '/inc/widgets/image-picker.php';
+
 
 
 
