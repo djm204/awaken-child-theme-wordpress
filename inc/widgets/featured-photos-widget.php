@@ -29,7 +29,17 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
 		 //WIDGET BACK-END SETTINGS
       $instance = wp_parse_args((array) $instance, array());
           
-      $links = [$instance['link1'], $instance['link2'], $instance['link3'], $instance['link4'], $instance['link5'], $instance['link6'], $instance['link7'],$instance['link8'], $instance['link9']  ];
+      $links = [
+          $instance['link1'], 
+          $instance['link2'], 
+          $instance['link3'], 
+          $instance['link4'], 
+          $instance['link5'], 
+          $instance['link6'], 
+          $instance['link7'],
+          $instance['link8'], 
+          $instance['link9']  
+          ];
 
       
       $images = new WP_Query( array( 'post_type' => 'attachment', 'post_status' => 'inherit', 'post_mime_type' => 'image' , 'posts_per_page' => -1 ) );
@@ -42,7 +52,7 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
                   $img_src = wp_get_attachment_image_src(get_the_ID());
                   $the_link = $links[$i];
                   $options[$i] .= '<option value="' . $img_src[0] . '" ' . selected( $the_link, $img_src[0], false ) . '>' . get_the_title() . '</option>';
-            } 
+                } 
              ?>
                 <select name="<?php echo $this->get_field_name( 'link'.$i ); ?>"><?php echo $options[$i]; ?></select><img src="<?= $links[$i] ?>" />
              
@@ -71,6 +81,8 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
 		$instance = $old_instance;
         
         foreach($instance as $key => $val){
+            echo $key;
+            echo $val;
             
             $instance[ $key ] = strip_tags( $new_instance[ $key ] );	
             
@@ -94,6 +106,7 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
     
 	public function widget( $args, $instance ) {
 		extract($args);
+		 $link0 = ( empty($instance['link0']) ) ? 0 : $instance['link0'];
 
 		 $link1 = ( empty($instance['link1']) ) ? 0 : $instance['link1'];
       $link2 = ( empty($instance['link2']) ) ? 0 : $instance['link2']; 
@@ -103,7 +116,8 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
       $link6 = ( empty($instance['link6']) ) ? 0 : $instance['link6']; 
       $link7 = ( empty($instance['link7']) ) ? 0 : $instance['link7']; 
       $link8 = ( empty($instance['link8']) ) ? 0 : $instance['link8']; 
-      $link9 = ( empty($instance['link9']) ) ? 0 : $instance['link9']; 
+      
+       
       
 		echo $before_widget;
       ?>
@@ -123,7 +137,6 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
           if($link6) { ?><div class="photo-gal-thumb"><img src="<?php echo $link6; ?>" alt=""></div><?php }
           if($link7) { ?><div class="photo-gal-thumb"><img src="<?php echo $link7; ?>" alt=""></div><?php }
           if($link8) { ?><div class="photo-gal-thumb"><img src="<?php echo $link8; ?>" alt=""></div><?php }
-          if($link9) { ?><div class="photo-gal-thumb"><img src="<?php echo $link9; ?>" alt=""></div><?php }
       } 
   
       echo '</div>
