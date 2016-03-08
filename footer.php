@@ -49,6 +49,7 @@
 		<div class="footer-site-info">	
 			<div class="container">
 				<div class="row">
+
 				<?php 
 					$footer_copyright_text = get_theme_mod( 'footer_copyright_text', '' );
 					if( !empty( $footer_copyright_text ) ) {

@@ -21,37 +21,27 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'awaken' ); ?></a>
-    <?php if ( has_nav_menu( 'top_navigation' ) || get_theme_mod( 'display_social_icons', false ) ) : ?>	
-		<div class="top-nav" >
-			<div class="fluid-container">
-				<div class="row">
-					<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
-					<div class="col-xs-12 col-sm-12 col-md-12 <?php echo $rtl; ?>">
-						<?php if ( has_nav_menu( 'top_navigation' ) ) : ?>
-							<nav id="top-navigation " class="top-navigation" role="navigation">
-								<?php wp_nav_menu( array( 'theme_location' => 'top_navigation' ) ); ?>
-                                <?php awaken_socialmedia(); ?>			
-                                
-							</nav><!-- #site-navigation -->	
-                            <div class="awaken-search-button-icon"></div>
-                            <div class="awaken-search-box-container">
-                                <div class="awaken-search-box">
-                                    <form action="<?php echo esc_url( home_url( '/' ) ); ?>" id="awaken-search-form" method="get">
-                                        <input type="text" value="" name="s" id="s" />
-                                        <input type="submit" value="<?php _e( 'Search', 'awaken' ); ?>" />
-                                    </form>
-                                </div><!-- th-search-box -->
-                            </div><!-- .th-search-box-container -->
-							<a href="#" class="navbutton" id="top-nav-button"><?php _e( 'Top Menu', 'awaken' ); ?></a>
-							<div class="responsive-topnav"></div>
-						<?php endif; ?>
-					</div><!-- col-xs-12 col-sm-6 col-md-8 -->
-					<div class="col-xs-12 col-sm-6 col-md-4">
-						
-					</div><!-- col-xs-12 col-sm-6 col-md-4 -->
-				</div><!-- row -->
-			</div><!-- .container -->
-		</div>
+    <?php if ( has_nav_menu( 'top_navigation' ) || get_theme_mod( 'display_social_icons', false ) ) : ?>
+    
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="fluid-container">
+                
+                
+            <?=wp_nav_menu( array(
+                'container' =>false,
+                'menu_class' => 'nav navbar-nav',
+                'echo' => true,
+                'before' => '',
+                'after' => '',
+                'link_before' => '',
+                'link_after' => '',
+                'depth' => 0,
+                'walker' => new description_walker())
+            ); ?>	
+            </div>
+        </nav>            	
+    
+		
 	<?php endif; ?>
     
     <?php if(is_front_page()) :?>

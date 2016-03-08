@@ -18,6 +18,10 @@
     margin-right: 0px !important;
 }
 
+.no-pads{
+    padding: 0px;
+}
+
 ul {
     margin: 0 !important;
 }
