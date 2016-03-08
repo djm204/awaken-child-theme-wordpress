@@ -54,7 +54,8 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
                   $options[$i] .= '<option value="' . $img_src[0] . '" ' . selected( $the_link, $img_src[0], false ) . '>' . get_the_title() . '</option>';
                 } 
              ?>
-                <select name="<?php echo $this->get_field_name( 'link'.$i ); ?>"><?php echo $options[$i]; ?></select><img src="<?= $links[$i] ?>" />
+             <pre><?=print_r($links);?></pre>
+                <select name="<?php echo $this->get_field_name( 'link'.($i+1) ); ?>"><?php echo $options[$i]; ?></select><img src="<?= $links[$i] ?>" />
              
              <?php 
          } 
@@ -106,16 +107,12 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
     
 	public function widget( $args, $instance ) {
 		extract($args);
-		 $link0 = ( empty($instance['link0']) ) ? 0 : $instance['link0'];
-
-		 $link1 = ( empty($instance['link1']) ) ? 0 : $instance['link1'];
-      $link2 = ( empty($instance['link2']) ) ? 0 : $instance['link2']; 
-      $link3 = ( empty($instance['link3']) ) ? 0 : $instance['link3']; 
-      $link4 = ( empty($instance['link4']) ) ? 0 : $instance['link4']; 
-      $link5 = ( empty($instance['link5']) ) ? 0 : $instance['link5']; 
-      $link6 = ( empty($instance['link6']) ) ? 0 : $instance['link6']; 
-      $link7 = ( empty($instance['link7']) ) ? 0 : $instance['link7']; 
-      $link8 = ( empty($instance['link8']) ) ? 0 : $instance['link8']; 
+        
+        
+        for($i = 0; $i < sizeof($args); $i++){
+            $link[] =  ( empty($instance['link'.$i]) ) ? 0 : $instance['link'.$i];
+        }
+		 
       
        
       
@@ -126,17 +123,13 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
           <div class="thumb-wrapper">
         
        <!-- Display images --><?php 
-      if( !( $link1 || $link2 ) ) {
+      if( !( $link) ) {
           echo "Please configure this widget.";
       } else { 
-          if($link1) { ?><div class="photo-gal-thumb"><img src="<?php echo $link1; ?>" alt=""></div><?php }
-          if($link2) { ?><div class="photo-gal-thumb"><img src="<?php echo $link2; ?>" alt=""></div><?php }
-          if($link3) { ?><div class="photo-gal-thumb"><img src="<?php echo $link3; ?>" alt=""></div><?php }
-          if($link4) { ?><div class="photo-gal-thumb"><img src="<?php echo $link4; ?>" alt=""></div><?php }
-          if($link5) { ?><div class="photo-gal-thumb"><img src="<?php echo $link5; ?>" alt=""></div><?php }
-          if($link6) { ?><div class="photo-gal-thumb"><img src="<?php echo $link6; ?>" alt=""></div><?php }
-          if($link7) { ?><div class="photo-gal-thumb"><img src="<?php echo $link7; ?>" alt=""></div><?php }
-          if($link8) { ?><div class="photo-gal-thumb"><img src="<?php echo $link8; ?>" alt=""></div><?php }
+          
+          for($i = 0; $i < sizeof($link); $i++){
+          if($link[$i]) { ?><div class="photo-gal-thumb"><img src="<?php echo $link[$i]; ?>" alt=""></div><?php }
+          }
       } 
   
       echo '</div>
