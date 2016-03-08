@@ -23,22 +23,35 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'awaken' ); ?></a>
     <?php if ( has_nav_menu( 'top_navigation' ) || get_theme_mod( 'display_social_icons', false ) ) : ?>
     
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav id="top-navigation" class="navbar navbar-default navbar-fixed-top">
             <div class="fluid-container">
-                
-                
-            <?=wp_nav_menu( array(
-                'container' =>false,
-                'menu_class' => 'nav navbar-nav',
-                'echo' => true,
-                'before' => '',
-                'after' => '',
-                'link_before' => '',
-                'link_after' => '',
-                'depth' => 0,
-                'walker' => new description_walker())
-            ); ?>	
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">    
+                <?=wp_nav_menu( array(
+                    'container' =>false,
+                    'menu_class' => 'nav navbar-nav',
+                    'echo' => true,
+                    'before' => '',
+                    'after' => '',
+                    'link_before' => '',
+                    'link_after' => '',
+                    'depth' => 0,
+                    'walker' => new description_walker())
+                ); ?>
+                <?php awaken_socialmedia(); ?>		
+                	
+                </div>
             </div>
+                                	
+            
         </nav>            	
     
 		
@@ -92,12 +105,12 @@
     window.addEventListener('scroll', function(e){
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
             shrinkOn = 300,
-            header = document.querySelector("header");
+            navBar = document.querySelector("nav");
         if (distanceY > shrinkOn) {
-            classie.add(header,"smaller");
+            classie.add(navBar,"smaller");
         } else {
-            if (classie.has(header,"smaller")) {
-                classie.remove(header,"smaller");
+            if (classie.has(navBar,"smaller")) {
+                classie.remove(navBar,"smaller");
             }
         }
     });

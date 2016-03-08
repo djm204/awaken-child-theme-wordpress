@@ -44,30 +44,27 @@ header {
     transition: height 0.3s;
 }
 
-
-.top-navigation {
-    position: fixed;
-}
-.top-navigation a {
-    line-height: 75px !important;
-    margin-left: 20px;
-    color: #9fdbfc;
-    font-weight: 700;
-    font-size: 18px;
-    -webkit-transition: all 0.3s;
+#top-navigation a {
+    color: white;
+     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+    
+    
 }
-header nav a:hover {
-    color: white;
+#top-navigation a:hover {
+    color: #fbff88;
 }
 
-
-header.smaller nav a {
-    line-height: 75px;
+nav a {
+    line-height: 75px ;
+    font-weight: 700;
+    font-size: 18px;
+   
 }
+
 
 
 .site-branding{
@@ -90,12 +87,6 @@ header.smaller nav a {
     max-width: 450px;
 }
 
-.site-title a{
-    color: #e17465;
-    text-align: center;
-    display: block;
-}
-
 .site-footer{
     margin: 0px;
 }
@@ -104,43 +95,25 @@ header.smaller nav a {
     float: right;
     margin-right: 10px;
 }
-.awaken-navigation-container{
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin-top: 10px
-}
-.top-navigation{
-    left: 0;
-    z-index: 99999;
+
+#top-navigation{
     background: darkred;
     background: -webkit-linear-gradient(darkred, #700000); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(darkred, #700000); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(darkred, #700000); /* For Firefox 3.6 to 15 */
     background: linear-gradient(darkred, #700000); 
 }
-.top-navigation a, .asocial-icon a {
+.asocial-icon a {
     color: white;
 }
 
-.top-navigation ul > li > a:before {
+#top-navigation ul > li > a:before {
     content: '';
 }
 
-.main-navigation a{
-    min-width: 215px;
-    text-align: center;
-    border-right: 1px solid #700000;
-}
-
-.main-navigation a{
-    border-left:  1px solid #700000;
-    
-}
-
-.top-nav{
-    background: #fff;
-}
+nav.smaller a {
+        line-height: 35px;
+    }
 
 
 #myCarousel {
@@ -359,16 +332,6 @@ header.smaller nav a {
     padding-top: 20px;
 }
 
-/*Mobile Res*/
-@media all and (max-width: 1200px){
-    #top-nav-button {
-        display: inline-block;
-    }
-    
-    .top-navigation{
-        display: none;
-    }
-}
 
 @media all and (max-width: 770px){
     .site-logo > a > img {
@@ -390,27 +353,8 @@ header.smaller nav a {
         line-height: 100px;
         text-align: center;
     }
-    header nav {
-        display: block;
-        float: none;
-        height: 50px;
-        text-align: center;
-        margin: 0 auto;
-    }
-    header nav a {
-        line-height: 50px;
-        margin: 0 10px;
-    }
-
-    header.smaller h1#logo {
-        height: 40px;
-        line-height: 40px;
-        font-size: 30px;
-    }
-    header.smaller nav {
-        height: 35px;
-    }
-    header.smaller nav a {
+    
+    nav.smaller a {
         line-height: 35px;
     }
 }
