@@ -64,13 +64,15 @@
                     </script>
                 </p>
 
-                <a href="#" id="toTop"> <span id="upToTop" class="glyphicon glyphicon-chevron-up back-to-top"> </span></a>
-
+                
             <!--- copy-right ---->
 						</div>
 						<div class="col-xs-12 col-md-6 col-sm-6 fr">
+                            <a href="#" id="toTop"> <span id="upToTop" class="glyphicon glyphicon-chevron-up back-to-top"> </span></a>
+
                             Designed by <a href="http://dev.desiratech.com">Desiratech Development</a>
 						</div>
+                        
 				<?php } ?>
 				</div><!-- .row -->
 			</div><!-- .container -->
@@ -101,6 +103,21 @@ function initialize() {
   
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);</script>
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+//scrollToTop
+var myID = document.getElementById("upToTop");
+
+var myScrollFunc = function() {
+    var y = window.scrollY;
+    if (y >= 400) {
+        myID.className = "glyphicon glyphicon-chevron-up back-to-top show"
+    } else {
+        myID.className = "glyphicon glyphicon-chevron-up back-to-top hide"
+    }
+};
+
+window.addEventListener("scroll", myScrollFunc);</script>
 </body>
 </html>

@@ -36,6 +36,32 @@ ul {
     margin: 0 !important;
 }
 
+#upToTop {
+    display:none;
+    background: rgba(0,0,0,.3);
+    border-radius: 10px;
+    text-align: center;    
+    padding: 5px;
+}
+
+#toTop {
+	text-decoration: none;
+	position: fixed;
+	bottom: 14px;
+	right: 3%;
+	overflow: hidden;
+	width: 40px;
+	height: 40px;
+	border: none;
+    color: red;
+    font-size: 2em;
+    
+}
+
+#toTop:hover{
+    color: yellow;
+}
+
 /* header */
 
 header {

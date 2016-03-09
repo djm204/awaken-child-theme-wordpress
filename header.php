@@ -109,7 +109,7 @@
 <script>function init() {
     window.addEventListener('scroll', function(e){
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = 300,
+            shrinkOn = 575,
             navBar = document.querySelector("nav");
             navBarBrand =  document.querySelector("section");//document.getElementsByClassName("navbar-brand")[0];
         if (distanceY > shrinkOn) {
