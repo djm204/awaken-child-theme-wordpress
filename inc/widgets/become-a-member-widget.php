@@ -79,7 +79,7 @@ class Desiratech_Become_A_Member_Widget extends WP_Widget {
 		echo $before_widget;
 		echo ' <!---- contact --->
    
-                        <h3 class="program-button-red">Become A Member</h3>
+                        <a href ="become-a-member"><h3 class="program-button-red">Become A Member</h3></a>
                         <p>
                             Membership to our non-profit organization helps support and preserve the Spanish community and heritage in Winnipeg, continuing to bring us together whether it’s enjoying social gatherings, learning the Spanish language or being part of Sol de Espana Folklore dancers. We have numerous free member events thru-out the year. If you wish to register as a member fill out <a href="#">this form</a>.
                         </p>

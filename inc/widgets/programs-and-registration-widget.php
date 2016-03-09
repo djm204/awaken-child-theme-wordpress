@@ -84,7 +84,7 @@ class Desiratech_Programs_Registration extends WP_Widget {
 		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
 
 		echo $before_widget;
-		echo '<h3 class="program-button">Programs & Registration</h3>
+		echo '<a href ="programs-and-registration"><h3 class="program-button">Programs & Registration</h3></a>
                         <p>
                             
 Cibo audire honestatis ea sit, quo delectus cotidieque an. Usu ei mediocrem contentiones, dico sententiae efficiantur no eos. Ex per quis sale. Elit latine ad nec, sit in vivendum imperdiet tincidunt. Has dolore possim albucius ne, facilis persequeris sea ad.

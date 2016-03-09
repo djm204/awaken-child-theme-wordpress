@@ -32,7 +32,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Project name</a>
+                    <section>
+                        <a class="navbar-brand" href="/"></a>
+                    </section>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">    
                 <?=wp_nav_menu( array(
@@ -46,21 +48,24 @@
                     'depth' => 0,
                     'walker' => new description_walker())
                 ); ?>
-                <?php awaken_socialmedia(); ?>		
-                	
+                
+                <div class="awaken-search-button-icon"></div>
+                            <div class="awaken-search-box-container">
+                                <div class="awaken-search-box">
+                                    <form action="<?php echo esc_url( home_url( '/' ) ); ?>" id="awaken-search-form" method="get">
+                                        <input type="text" value="" name="s" id="s" />
+                                        <input type="submit" value="<?php _e( 'Search', 'awaken' ); ?>" />
+                                    </form>
+                                </div><!-- th-search-box -->
+                            </div><!-- .th-search-box-container -->
+                
+                <?php awaken_socialmedia(); ?>
                 </div>
-            </div>
-                                	
-            
-        </nav>            	
-    
-		
-	<?php endif; ?>
-    
+            </div>       
+        </nav>
+	<?php endif; ?>    
     <?php if(is_front_page()) :?>
 	<header id="masthead" class="site-header " role="banner">
-		
-	
 
 	<div class="site-branding wow fadeIn" data-wow-delay="0.7s">
 		<div class="fluid-container">
@@ -106,11 +111,16 @@
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
             shrinkOn = 300,
             navBar = document.querySelector("nav");
+            navBarBrand =  document.querySelector("section");//document.getElementsByClassName("navbar-brand")[0];
         if (distanceY > shrinkOn) {
             classie.add(navBar,"smaller");
+            classie.add(navBarBrand, "smallerImage");
         } else {
             if (classie.has(navBar,"smaller")) {
                 classie.remove(navBar,"smaller");
+            }
+            if (classie.has(navBarBrand,"smallerImage")) {
+                classie.remove(navBarBrand,"SmallerImage");
             }
         }
     });

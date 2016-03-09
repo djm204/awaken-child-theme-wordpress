@@ -1,7 +1,7 @@
 /*
- Theme Name:   Awaken Child
+ Theme Name:   Community Website
  Theme URI:    http://awaken-child.desiratech.com
- Description:  Awaken Child Theme
+ Description:  Awaken Child Theme made into community website theme
  Author:       David Mendez
  Author URI:   http://dev.desiratech.com
  Template:     awaken
@@ -11,13 +11,23 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  awaken-child
 */
-
-/*General*/
+#wpadminbar{
+    z-index: -1 !important;
+}
+/*BootStrap Override*/
 .row{
     margin-left: 0px !important;
     margin-right: 0px !important;
 }
 
+.navbar-fixed-top .navbar-collapse{
+    max-height: none;
+}
+
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+/*General*/
 .no-pads{
     padding: 0px;
 }
@@ -58,13 +68,32 @@ header {
     color: #fbff88;
 }
 
+.current_page_item a {
+    color: #f9ff60 !important;
+}
+.navbar-nav > li > a{
+    line-height: 75px;
+}
 nav a {
     line-height: 75px ;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.2em;
    
 }
 
+.awaken-search-button-icon{
+    top: 25%;
+    right: 50px;
+}
+
+nav.smaller a {
+    line-height: 35px;
+}
+
+nav.smaller {
+   background: darkred;
+   background: rgba(127,0,0, .6);    
+}
 
 
 .site-branding{
@@ -72,6 +101,7 @@ nav a {
     width: 65%;
     margin: 0px auto;
 }
+
 .site-logo {
     float: none;
     display: block;
@@ -83,6 +113,7 @@ nav a {
     padding-top:50px;
     
 }
+
 .site-logo > a > img {
     max-width: 450px;
 }
@@ -96,7 +127,16 @@ nav a {
     margin-right: 10px;
 }
 
-#top-navigation{
+.navbar-brand {
+    display: block;
+    width: 75px;
+    margin-top: 10px;
+    margin-left: 10px;   
+    background: url('images/spain-flag-branding.png') no-repeat;
+    background-size: contain;
+}
+
+nav{
     background: darkred;
     background: -webkit-linear-gradient(darkred, #700000); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(darkred, #700000); /* For Opera 11.1 to 12.0 */
@@ -111,9 +151,7 @@ nav a {
     content: '';
 }
 
-nav.smaller a {
-        line-height: 35px;
-    }
+
 
 
 #myCarousel {
@@ -258,12 +296,7 @@ nav.smaller a {
 
 /*contact us */
 
-#contact-info{
-    margin-top: 120px;
-}
-.contact-icon{
-    margin-right:10px;
-}
+
 
 #events{
     list-style: none;
@@ -321,7 +354,8 @@ nav.smaller a {
 }
 
 .asocial-area{
-    margin-right: 20px;
+    margin-right: 100px;
+    margin-top: 1%;
 }
 
 /*Footer*/ 
@@ -333,7 +367,7 @@ nav.smaller a {
 }
 
 
-@media all and (max-width: 770px){
+@media all and (max-width: 768px){
     .site-logo > a > img {
         max-width: 250px;
     }
@@ -342,6 +376,16 @@ nav.smaller a {
         width: 300px;
         
     }
+    
+    nav a {
+        line-height: 35px !important;
+    }
+    
+    .awaken-search-button-icon{
+        top: 50px;
+        right: 10px;
+    }
+
 }
 
 @media all and (max-width: 660px) {
