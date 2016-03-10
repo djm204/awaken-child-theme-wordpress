@@ -70,7 +70,7 @@
 						<div class="col-xs-12 col-md-6 col-sm-6 fr">
                             <a href="#" id="toTop"> <span id="upToTop" class="glyphicon glyphicon-chevron-up back-to-top"> </span></a>
 
-                            Designed by <a href="http://dev.desiratech.com">Desiratech Development</a>
+                            Designed by <a href="http://dev.desiratech.com" target="_blank">Desiratech Development</a>
 						</div>
                         
 				<?php } ?>

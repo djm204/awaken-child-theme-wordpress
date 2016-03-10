@@ -104,10 +104,10 @@ class Desiratech_Contact_Widget extends WP_Widget {
 
                         <h3>Contact Info</h3>
                             <ul class="col-md-12">
-                                    <li><span class="contact-icon glyphicon glyphicon-home"></span>'.$address.'</li>
-                                    <li><span class="contact-icon glyphicon glyphicon-earphone"> </span><a href="tel:'.$phone_number.'">'.$phone_number.'</a></li>
-                                    <li><span class="contact-icon glyphicon glyphicon-envelope"> </span><a href="mailto:'.$email.'">'.$email.'</a></li>
-                                    <li><span class="contact-icon fa fa-facebook"> </span><a href="https://facebook.com/'.$facebook.'">facebook.com/'.$facebook.'</a></li>
+                                    <li><span class="contact-icon glyphicon glyphicon-home col-xs-2"></span>'.$address.'</li>
+                                    <li><span class="contact-icon glyphicon glyphicon-earphone col-xs-2"> </span><a href="tel:'.$phone_number.'">'.$phone_number.'</a></li>
+                                    <li><span class="contact-icon glyphicon glyphicon-envelope col-xs-2"> </span><a href="mailto:'.$email.'">'.$email.'</a></li>
+                                    <li><span class="contact-icon fa fa-facebook col-xs-2"> </span><a href="https://facebook.com/'.$facebook.'">facebook.com/'.$facebook.'</a></li>
                             </ul>
                 </div>';
 	

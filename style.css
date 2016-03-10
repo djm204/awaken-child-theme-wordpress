@@ -20,6 +20,10 @@
     margin-right: 0px !important;
 }
 
+.visible{
+    visibility: visible;
+}
+
 .navbar-fixed-top .navbar-collapse{
     max-height: none;
 }
@@ -108,8 +112,8 @@ nav a {
 }
 
 .awaken-search-button-icon{
-    top: 25%;
-    right: 50px;
+    top: 22%;
+    right: 30px;
 }
 
 nav.smaller a {
@@ -118,15 +122,11 @@ nav.smaller a {
 
 nav.smaller {
    background: darkred;
-   background: rgba(127,0,0, .6);    
+   background: rgba(127,0,0, .8);    
 }
 
 
-.site-branding{
-    display: block;
-    width: 65%;
-    margin: 0px auto;
-}
+
 
 .site-logo {
     float: none;
@@ -232,12 +232,13 @@ nav{
 .photo-gal-thumb{
     display: inline-block;
     border: 1px solid black;
-    min-width: 100px;
-    max-width: 100px;
-    min-height: 100px;
-    max-height: 100px;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 200px;
+    max-height: 200px;
     margin-top: 5px;
     margin-left: 4px;
+    cursor: pointer;
     
 }
 
@@ -246,8 +247,7 @@ nav{
 }
 
 .photo-gal-thumb img{
-    display: block;
-    width: 100%;
+    
 }
 
 
@@ -385,9 +385,7 @@ nav{
 }
 
 /*Footer*/ 
-.mid-footer{
-    padding-top: 50px;
-}
+
 .footer-widget-area {
     padding-top: 20px;
 }

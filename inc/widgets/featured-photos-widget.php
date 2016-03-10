@@ -34,7 +34,6 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
           $instance['link2'], 
           $instance['link3'], 
           $instance['link4'], 
-          $instance['link5']
       
           ];
 
@@ -42,15 +41,16 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
       $images = new WP_Query( array( 'post_type' => 'attachment', 'post_status' => 'inherit', 'post_mime_type' => 'image' , 'posts_per_page' => -1 ) );
       if( $images->have_posts() ){ 
           $options = array();
-            for( $i = 0; $i < 5; $i++ ) {
+            for( $i = 0; $i < 4; $i++ ) {
               $options[$i] = '';
               while( $images->have_posts() ) {
                   $images->the_post();
-                  $img_src = wp_get_attachment_image_src(get_the_ID());
+                  $img_src = wp_get_attachment_image_src(get_the_ID(), 'original');
                   $the_link = $links[$i];
-                  $options[$i] .= '<option value="' . $img_src[0] . '" ' . selected( $the_link, $img_src[0], false ) . '>' . get_the_title() . '</option>';
+                  $options[$i] .= '<option value="' . $img_src[0] . '" ' . '>' . get_the_title() . '</option>';
                 } 
              ?>
+             <?= print_r($img_src) ?>
                 <select name="<?php echo $this->get_field_name( 'link'.($i+1) ); ?>"><?php echo $options[$i]; ?></select><img src="<?= $links[$i] ?>" />
              
              <?php 
@@ -124,7 +124,34 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
       } else { 
           
           for($i = 0; $i < sizeof($link); $i++){
-          if($link[$i]) { ?><div class="photo-gal-thumb"><img src="<?php echo $link[$i]; ?>" alt=""></div><?php }
+          if($link[$i]) { ?>
+          
+            <div class="photo-gal-thumb" data-toggle="modal" data-target="#myModal<?=$i?>">
+              <img src="<?php echo $link[$i]; ?>" alt="">
+            </div>
+          <!-- Modal -->
+            <div id="myModal<?=$i?>" class="modal fade " role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="<?php echo $link[$i]; ?>" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+          
+          
+          <?php }
           }
       } 
   
