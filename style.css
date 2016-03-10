@@ -217,6 +217,7 @@ nav{
     padding-top: 50px;
 }
 
+
 .program-button, .program-button-red{
     border: 1px solid black;
     padding: 10px;
@@ -236,18 +237,20 @@ nav{
     max-width: 200px;
     min-height: 200px;
     max-height: 200px;
+    margin-left: 5px;
     margin-top: 5px;
-    margin-left: 4px;
     cursor: pointer;
-    
+    box-sizing: border-box;
 }
+
+
 
 .photo-gal-thumb:first-of-type{
     margin-left: none;
 }
 
 .photo-gal-thumb img{
-    
+    width: 100%;
 }
 
 

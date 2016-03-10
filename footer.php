@@ -12,9 +12,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row body">
 				<div class="footer-widget-area">
-					<div class="col-md-4">
+					<div class="col-md-4 footer-widget">
 						<div class="left-footer">
 							<div class="widget-area" role="complementary">
 								<?php if ( ! dynamic_sidebar( 'footer-left' ) ) : ?>
@@ -24,7 +24,7 @@
 						</div>
 					</div>
 					
-					<div class="col-md-4">
+					<div class="col-md-4 footer-widget">
 						<div class="mid-footer">
 							<div class="widget-area" role="complementary">
 								<?php if ( ! dynamic_sidebar( 'footer-mid' ) ) : ?>
@@ -33,7 +33,7 @@
 							</div><!-- .widget-area -->						</div>
 					</div>
 
-					<div class="col-md-4">
+					<div class="col-md-4 footer-widget">
 						<div class="right-footer">
 							<div class="widget-area" role="complementary">
 								<?php if ( ! dynamic_sidebar( 'footer-right' ) ) : ?>
@@ -58,7 +58,7 @@
 						<div class="col-xs-12 col-md-6 col-sm-6">				
 							<!--- copy-right ---->
 
-                <p>&copy; The Spanish Club of Winnipeg 1978-
+                <p>&copy; The Spanish Club of Winnipeg 1978 -
                     <script>
                         document.write(new Date().getFullYear())
                     </script>

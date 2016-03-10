@@ -47,11 +47,10 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
                   $images->the_post();
                   $img_src = wp_get_attachment_image_src(get_the_ID(), 'original');
                   $the_link = $links[$i];
-                  $options[$i] .= '<option value="' . $img_src[0] . '" ' . '>' . get_the_title() . '</option>';
+                  $options[$i] .= '<option value="' . $img_src[0]. '"'. selected( $the_link, $img_src[0], false ) . '>' . get_the_title() . '</option>';
                 } 
              ?>
-             <?= print_r($img_src) ?>
-                <select name="<?php echo $this->get_field_name( 'link'.($i+1) ); ?>"><?php echo $options[$i]; ?></select><img src="<?= $links[$i] ?>" />
+                <select name="<?php echo $this->get_field_name( 'link'.($i+1) ); ?>"><?php echo $options[$i]; ?></select><img class="thumb-nail" src="<?= $links[$i] ?>" />
              
              <?php 
          } 

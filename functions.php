@@ -70,6 +70,13 @@ function awaken_child_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'awaken_child_scripts' );
 
+function admin_scripts_desiratech(){
+    wp_enqueue_style( 'custom_admin_css', get_stylesheet_directory_uri() . '/css/admin.css', array(), 'all' );
+    
+}
+
+add_action( 'admin_enqueue_scripts', 'admin_scripts_desiratech');
+
 require get_stylesheet_directory() . '/inc/widgets/photo-widget.php';
 require get_stylesheet_directory() . '/inc/widgets/contact-widget.php';
 require get_stylesheet_directory() . '/inc/widgets/upcoming-events-widget.php';
@@ -78,6 +85,8 @@ require get_stylesheet_directory() . '/inc/widgets/programs-and-registration-wid
 require get_stylesheet_directory() . '/inc/widgets/become-a-member-widget.php';
 require get_stylesheet_directory() . '/inc/widgets/image-picker.php';
 
+
+// custom walker for nav menu
 class description_walker extends Walker_Nav_Menu
 {
       function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
@@ -120,6 +129,18 @@ class description_walker extends Walker_Nav_Menu
 }
 
 
+//Media Upload
+function wp_gear_manager_admin_scripts() {
+wp_enqueue_script('media-upload');
+wp_enqueue_script('thickbox');
+wp_enqueue_script('jquery');
+}
 
+function wp_gear_manager_admin_styles() {
+wp_enqueue_style('thickbox');
+}
+
+add_action('admin_print_scripts', 'wp_gear_manager_admin_scripts');
+add_action('admin_print_styles', 'wp_gear_manager_admin_styles');
 
 ?>
