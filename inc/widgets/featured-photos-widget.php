@@ -7,26 +7,26 @@
 
 class Desiratech_Featured_Photos_Widget extends WP_Widget {
 
-	/* Register Widget with WordPress*/
-	function __construct() {
-		parent::__construct(
-			'desiratech_featured_photos_widget', // Base ID
-			__( 'Desiratech: Featured Photos Widget', 'awaken' ), // Name
-			array( 'description' => __( 'Featured Photos Widget', 'awaken' ), ) // Args
-		);
-	}
+  /* Register Widget with WordPress*/
+  function __construct() {
+    parent::__construct(
+      'desiratech_featured_photos_widget', // Base ID
+      __( 'Desiratech: Featured Photos Widget', 'awaken' ), // Name
+      array( 'description' => __( 'Featured Photos Widget', 'awaken' ), ) // Args
+    );
+  }
 
 
-	/**
-	 * Back-end widget form.
-	 *
-	 * @see WP_Widget::form()
-	 *
-	 * @param array $instance Previously saved values from database.
-	 */
+  /**
+   * Back-end widget form.
+   *
+   * @see WP_Widget::form()
+   *
+   * @param array $instance Previously saved values from database.
+   */
 
-	public function form( $instance ) {
-		 //WIDGET BACK-END SETTINGS
+  public function form( $instance ) {
+     //WIDGET BACK-END SETTINGS
       $instance = wp_parse_args((array) $instance, array());
           
       $links = [
@@ -36,7 +36,6 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
           $instance['link4'], 
       
           ];
-
       
       $images = new WP_Query( array( 'post_type' => 'attachment', 'post_status' => 'inherit', 'post_mime_type' => 'image' , 'posts_per_page' => -1 ) );
       if( $images->have_posts() ){ 
@@ -46,11 +45,18 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
               while( $images->have_posts() ) {
                   $images->the_post();
                   $img_src = wp_get_attachment_image_src(get_the_ID(), 'original');
+
+                  $selected = '';
+                  if($links[$i] == $img_src[0])
+                  {
+                    $selected = 'selected="selected"';
+                  }
+
                   $the_link = $links[$i];
-                  $options[$i] .= '<option value="' . $img_src[0]. '"'. selected( $the_link, $img_src[0], false ) . '>' . get_the_title() . '</option>';
+                  $options[$i] .= '<option value="' . $img_src[0] . '" ' . $selected . '>' . get_the_title() . '</option>';
                 } 
              ?>
-                <select name="<?php echo $this->get_field_name( 'link'.($i+1) ); ?>"><?php echo $options[$i]; ?></select><img class="thumb-nail" src="<?= $links[$i] ?>" />
+                <select id="<?php echo $this->get_field_id( 'link'.($i+1) ); ?>" name="<?php echo $this->get_field_name( 'link'.($i+1) ); ?>"><?php echo $options[$i]; ?></select><img src="<?= $links[$i] ?>" width="50px"/>
              
              <?php 
          } 
@@ -59,59 +65,64 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
             echo 'There are no images in the media library. Click <a href="' . admin_url('/media-new.php') . '" title="Add Images">here</a> to add some images';
       }
 
-	}
+  }
 
 
-	/**
-	 * Sanitize widget form values as they are saved.
-	 *
-	 * @see WP_Widget::update()
-	 *
-	 * @param array $new_instance Values just sent to be saved.
-	 * @param array $old_instance Previously saved values from database.
-	 *
-	 * @return array Updated safe values to be saved.
-	 */
-	
-	public function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
+  /**
+   * Sanitize widget form values as they are saved.
+   *
+   * @see WP_Widget::update()
+   *
+   * @param array $new_instance Values just sent to be saved.
+   * @param array $old_instance Previously saved values from database.
+   *
+   * @return array Updated safe values to be saved.
+   */
+  
+  public function update( $new_instance, $old_instance ) {
+    $instance = $old_instance;
         
         foreach($instance as $key => $val){
             echo $key;
             echo $val;
             
-            $instance[ $key ] = strip_tags( $new_instance[ $key ] );	
+            $instance[ $key ] = strip_tags( $new_instance[ $key ] );
             
         }
-		
+
+        $instance[ 'link1' ] = strip_tags( $new_instance[ 'link1' ] );
+        $instance[ 'link2' ] = strip_tags( $new_instance[ 'link2' ] );
+        $instance[ 'link3' ] = strip_tags( $new_instance[ 'link3' ] );
+        $instance[ 'link4' ] = strip_tags( $new_instance[ 'link4' ] );
+    
         
-		return $instance;
-	}
+    return $instance;
+  }
 
 
-	/**
-	 * Front-end display of widget.
-	 *
-	 * @see WP_Widget::widget()
-	 *
-	 * @param array $args     Widget arguments.
-	 * @param array $instance Saved values from database.
-	 */
-	
+  /**
+   * Front-end display of widget.
+   *
+   * @see WP_Widget::widget()
+   *
+   * @param array $args     Widget arguments.
+   * @param array $instance Saved values from database.
+   */
+  
     
     
-	public function widget( $args, $instance ) {
-		extract($args);
+  public function widget( $args, $instance ) {
+    extract($args);
         
         
         for($i = 0; $i < sizeof($args); $i++){
             $link[] =  ( empty($instance['link'.$i]) ) ? 0 : $instance['link'.$i];
         }
-		 
+     
       
        
       
-		echo $before_widget;
+    echo $before_widget;
       ?>
       <div class="col-xs-12">
           <h3> Featured Photos</h3>
@@ -156,8 +167,8 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
   
       echo '<a href="/photo-gallery">...More</a></div>
       </div>';
-	echo $after_widget;
-	}
+  echo $after_widget;
+  }
 
 
 }

@@ -26,26 +26,61 @@ class Desiratech_Photocarousel_Widget extends WP_Widget {
 	 */
 
 	public function form( $instance ) {
-		//print_r($instance);
-		$defaults = array(
-			'title'		=>	__( 'Featured Video', 'awaken' ),
-			'vid_url'	=>	'SQEQr7c0-dw'
-		);
-		$instance = wp_parse_args( (array) $instance, $defaults );
+		$fields = isset ( $instance['pictures'] ) ? $instance['pictures'] : array();
+        $field_num = count( $fields );
+        $fields[ $field_num + 1 ] = '';
+        $fields_html = array();
+        $fields_counter = 0;
 
-	?>
+        $images = new WP_Query( array( 'post_type' => 'attachment', 'post_status' => 'inherit', 'post_mime_type' => 'image' , 'posts_per_page' => -1 ) );
+        if( $images->have_posts() ){ 
+        	$i = 0;
+        	$options = array();
+        	
+        	foreach ( $fields as $name => $value )
+	        {
+	        	$options[$i] = '';
+	        	if($value == '')
+	        	{
+	        		$options[$i] .= '<option value="" ' . $selected . '>Select an image to add</option>';
+	        	}
+	        	else
+	        	{
+	        		$options[$i] .= '<option value="" ' . $selected . '>Remove Image</option>';
+	        	}
+	        	while( $images->have_posts() ) {
+	                $images->the_post();
+	                $img_src = wp_get_attachment_image_src(get_the_ID(), 'original');
 
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'awaken' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr($instance['title']); ?>"/>
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'vid_url' ); ?>"><?php _e( 'Youtube Video ID', 'awaken' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'vid_url' ); ?>" name="<?php echo $this->get_field_name( 'vid_url' ); ?>" value="<?php echo esc_attr($instance['vid_url']); ?>"/>
-		</p>
+	                $selected = '';
+	                if($value[0] == $img_src[0])
+	                {
+	                    $selected = 'selected="selected"';
+	                }
 
-	<?php
+	                //$the_link = $links[$i];
+	                $options[$i] .= '<option value="' . $img_src[0] . '" ' . $selected . '>' . get_the_title() . '</option>';
+	            } 
+	            $image_value = '';
+	            if(($fields_counter+1) != count($fields))
+	            {
+	            	$image_value = '<br /><img src="'.$value[0].'" width="140" margin-top="10px" />';
+	            }
+	            else
+	            {
+	            	$image_value = '<br /><hr />Select an image here to add to the carousel<br /><br />';
+	            }
 
+	            $fields_html[] = sprintf(
+	                ''. $image_value .'<select type="text" name="%1$s[%2$s][0]" class="widefat">'.$options[$i].'</select><br />Description:<br /><input type="text" name="%1$s[%2$s][1]" value="'.$value[1].'"/>',
+	                $this->get_field_name( 'pictures' ),
+	                $fields_counter
+	            );
+	            $fields_counter += 1;
+	        }
+
+        	print 'To remove images once added, select "Remove Image" from the top of the dropdown and click the save button.<br /><br />' . join( '<br />', $fields_html );
+        }// End if
 	}
 
 
@@ -62,8 +97,20 @@ class Desiratech_Photocarousel_Widget extends WP_Widget {
 	
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );	
-		$instance[ 'vid_url' ]	= strip_tags( $new_instance[ 'vid_url' ] );
+		if ( isset ( $new_instance['pictures'] ) ) {
+	        $index = 0;
+	        foreach ( $new_instance['pictures'] as $picture_value ) {
+	            if ( '' !== trim( $picture_value[0] ) ) {
+	                $new_array = array($picture_value[0], $picture_value[1]);
+	                $instance['pictures'][ $index ] = $new_array;
+	                $index++;
+	            }
+	            else
+	            {
+	            	array_splice($instance['pictures'], $index, 1);
+	            }
+	        }
+	    }
 		return $instance;
 	}
 
@@ -80,48 +127,28 @@ class Desiratech_Photocarousel_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract($args);
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';	
-		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
-
 		echo $before_widget;
-		echo '
+		?>
+
         <div id="my-carousel" class="carousel carousel-fade slide col-sm-12" data-ride="carousel" data-interval="7000">
     
         <!-- Indicators -->
         <ol class="hidden carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
+        	<?php foreach($instance['pictures'] as $key => $value) : ?>
+            	<li data-target="#myCarousel" data-slide-to="<?= $key ?>" class="<?php if($key==0){ echo 'active';} ?>"></li>
+            <?php endforeach ?>
         </ol>
             
         
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
+        	<?php foreach($instance['pictures'] as $key => $value) : ?>
+        		<div class="item<?php if($key==0){ echo ' active';} ?>">
             
-            <img class="img-responsive" src="images/pic1.jpg" alt="Folklorama Dancers">
-            <h2>Folklorama 2015</h2>            
-            </div>
-
-            <div class="item">
-            
-            <img class="img-responsive" src="images/pic2.jpg" alt="NYE @ Spanish Club">
-            <h2>NYE @ The Spanish Club of Winnipeg</h2>
-            
-            </div>
-
-            <div class="item">
-            
-            <img class="img-responsive" src="images/pic3.jpg" alt="Dia De La Hispanidad">
-            <h2>Dia De La Hispanidad</h2>
-            </div>
-
-            <div class="item">
-            
-            <img class="img-responsive" src="images/pic4.jpg" alt="Paella">
-            <h2>Paella</h2>            
-            </div>
+	            <img class="img-responsive" src="<?= $value[0] ?>" alt="<?= $value[1] ?>">
+	            <h2><?= $value[1] ?></h2>            
+	            </div>
+        	<?php endforeach ?>
         </div>
 
         <!-- Left and right controls -->
@@ -133,8 +160,8 @@ class Desiratech_Photocarousel_Widget extends WP_Widget {
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-        </div>';
-
+        </div>;
+<?php
 		echo '</div>';
 
 	echo $after_widget;
