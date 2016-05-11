@@ -113,18 +113,31 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract($args);
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';	
-		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
+		$first = true;
 
 		echo $before_widget;
 		?>
-			
+			<div style="animation: none !important;">
                 <a href="upcoming-events"><h3 class="program-button-red">Upcoming Events</h3></a>
-                    <ul id="events" class="col-md-12">
                     	<?php foreach($instance['events'] as $key => $value) : ?>
-                            <li data-toggle="modal" data-target="#myEventModal<?=$key?>">Event <?= $key+1 ?>: <?= $value[1] ?></li>  
+                    		<?php if($first){$liClass = ' eventList';} else { $liClass = ' eventList';} ?>
+                    		<?php if($key == 0) : ?>
+                    		<ul id="events" class="col-md-12<?= $liClass ?>">
+                    		<?php endif ?>
+                    		<li data-toggle="modal" data-target="#myEventModal<?=$key?>">Event <?= $key+1 ?>: <?= $value[1] ?></li>
+                    		<?php if(($key+1) % 4 == 0) : ?>
+                    		</ul>
+                    		<?php endif ?>
+                    		<?php if(($key+1) % 4 == 0) : ?>
+                    		<ul id="events" class="col-md-12<?= $liClass ?>">
+                    		<?php endif ?>
+                             
+                            <?php $first = false; ?>
+                            <?php if(($key+1) == count($instance['events']) && !(($key+1) % 4 == 0)) : ?>
+                    		</ul>
+                    		<?php endif ?>
                         <?php endforeach ?>
-                    </ul>
+
 
 
                <div id="folklorama">
@@ -157,6 +170,41 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 		                </div>
 		            </div>
                <?php endforeach ?>
+            </div>
+
+            <script>
+            jQuery(function($) {
+
+			    var counter = 0;
+			    var listItems = $('.eventList');
+			    var listItemsCount = listItems.size();
+
+
+			    function showList () {
+			    	if(listItemsCount != 1)
+			    	{
+			        	listItems.hide();
+			    	}
+
+			        var listItem = $('.eventList:eq('+counter+')');
+
+			        listItem.show('fast');
+
+			        counter++;
+			        if(counter == listItemsCount)
+			        {
+			        	counter = 0;
+			        }
+			    };
+
+			    showList();   
+
+			    setInterval(function () {
+			        showList();
+			    }, 7 * 1000);   
+
+			});
+            </script>
 	<?php
 	
 	echo $after_widget;
