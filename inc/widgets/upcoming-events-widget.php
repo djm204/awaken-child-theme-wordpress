@@ -26,13 +26,41 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 	 */
 
 	public function form( $instance ) {
-		//print_r($instance);
-		$defaults = array(
-			'title'		=>	__( 'Featured Video', 'awaken' ),
-			'vid_url'	=>	'SQEQr7c0-dw'
-		);
-		$instance = wp_parse_args( (array) $instance, $defaults );
+		$fields = isset ( $instance['events'] ) ? $instance['events'] : array();
+        $field_num = count( $fields );
+        $fields[ $field_num + 1 ] = '';
+        $fields_html = array();
+        $fields_counter = 0;
 
+        	$i = 0;
+        	$checkboxes = array();
+        	
+        	foreach ( $fields as $name => $value )
+	        {
+	        	$checkboxes[$i] = '<input type="checkbox" name="checkbox' . $i . '" id="checkbox' . $i . '"';
+
+	            $image_value = '';
+	            if(($fields_counter+1) != count($fields))
+	            {
+	            	$image_value = '<br />Remove Event? <input type="checkbox" name="checkbox' . $i . '" id="checkbox' . $i . '"' ;
+	            }
+	            else
+	            {
+	            	$image_value = '<br /><hr />Enter a new event<br /><br />';
+	            }
+
+	            $fields_html[] = sprintf(
+	                ''. $image_value .'Event Name: <br /><input type="text" name="eventName%1$s[%1$s][0]" class="widefat">'.$value[0].'</input>' .
+	                '<br />Date:<br /><input type="text" name="eventDate%1$s[%1$s][1]" class="widefat">'.$value[1].'</input>' .
+	                '<br />Description:<br /><input type="text" name="eventDescription%1$s[%1$s][1]" class="widefat">'.$value[2].'</input>' .
+	                '<br />Location:<br /><input type="text" name="eventLocation%1$s[%1$s][1]" class="widefat">'.$value[3].'</input>',
+	                $fields_counter
+	            );
+	            $fields_counter += 1;
+	        }
+
+        	print 'To remove images once added, select "Remove Image" from the top of the dropdown and click the save button.<br /><br />' . join( '<br />', $fields_html );
+        }// End if
 	?>
 
 		
@@ -55,8 +83,16 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 	
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );	
-		$instance[ 'vid_url' ]	= strip_tags( $new_instance[ 'vid_url' ] );
+		if ( isset ( $new_instance['events'] ) ) {
+	        $index = 0;
+	        foreach ( $new_instance['events'] as $event ) {
+	            if ( '' !== trim( $event[0] ) ) {
+	                $new_array = array($picture_value[0], $picture_value[1]);
+	                $instance['events'][ $index ] = $new_array;
+	                $index++;
+	            }
+	        }
+	    }
 		return $instance;
 	}
 
