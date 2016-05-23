@@ -33,10 +33,11 @@
                         <span class="icon-bar"></span>
                     </button>
                     <section>
-                        <a class="navbar-brand" href="/"></a>
+                        <a class="navbar-brand-big" href="/"></a>
+                        <img src="<?= get_stylesheet_uri()?>/../images/spanish-club-name-small.png" alt="Spanish Club of Winnipeg" />
                     </section>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">    
+                <div id="navbar" class="navbar-collapse collapse">
                 <?=wp_nav_menu( array(
                     'container' =>false,
                     'menu_class' => 'nav navbar-nav',

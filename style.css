@@ -153,14 +153,26 @@ nav.smaller {
     margin-right: 10px;
 }
 
-.navbar-brand {
+.navbar-brand-big {
+    display: block;
+    width: 95px;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 10px;   
+    background: url('images/spain-flag-branding-1.png') no-repeat;
+    background-size: contain;
+}
+
+.navbar-brand-small {
     display: block;
     width: 75px;
     margin-top: 10px;
-    margin-left: 10px;   
+    margin-left: 10px;
     background: url('images/spain-flag-branding.png') no-repeat;
     background-size: contain;
 }
+
+
 
 nav{
     background: darkred;
@@ -217,6 +229,7 @@ nav{
     padding-top: 50px;
 }
 
+
 .program-button, .program-button-red{
     border: 1px solid black;
     padding: 10px;
@@ -236,18 +249,20 @@ nav{
     max-width: 200px;
     min-height: 200px;
     max-height: 200px;
+    margin-left: 5px;
     margin-top: 5px;
-    margin-left: 4px;
     cursor: pointer;
-    
+    box-sizing: border-box;
 }
 
+
+
 .photo-gal-thumb:first-of-type{
-    margin-left: none;
+    margin-left: 0;
 }
 
 .photo-gal-thumb img{
-    
+    width: 100%;
 }
 
 
