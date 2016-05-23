@@ -26,37 +26,62 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 	 */
 
 	public function form( $instance ) {
+		ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 		$fields = isset ( $instance['events'] ) ? $instance['events'] : array();
         $field_num = count( $fields );
-        $fields[ $field_num + 1 ] = '';
+        $fields[ $field_num ] = '';
         $fields_html = array();
         $fields_counter = 0;
         	
         	foreach ( $fields as $name => $value )
 	        {
+	        	$text_jump = '';
+	        	if($fields_counter == 0)
+	        	{
+	        		$text_jump = '<a href="#newEventJump">Move to New Event Entry</a><br />';
+	        	}
+	        	$value_0 = '';
+	        	$value_1 = '';
+	        	$value_2 = '';
+	        	$value_3 = '';
+	        	if(($name+1) != count($fields))
+	        	{
+	        		$value_0 = $value[0];
+	        		$value_1 = $value[1];
+	        		$value_2 = $value[2];
+	        		$value_3 = $value[3];
+	        	}
 
 	            $image_value = '';
 	            if(($fields_counter+1) != count($fields))
 	            {
-	            	$image_value = '<br />Remove This Event? <input type="checkbox" name="' . $this->get_field_name( 'events' ) . '[' . $fields_counter . '][4]"></input>';
+	            	$event_jump = '';
+	            	if($fields_counter+2 == count($fields))
+	            	{
+	            		$event_jump = '<a name="newEventJump"></a>';
+	            	}
+	            	$image_value = $event_jump . '<br />Remove This Event? <input type="checkbox" name="' . $this->get_field_name( 'events' ) . '[' . $fields_counter . '][4]"></input>';
 	            }
 	            else
 	            {
 	            	$image_value = '<br /><hr />Enter a new event<br />';
+	            	
 	            }
 
 	            $fields_html[] = sprintf(
-	                ''. $image_value .'<br />Event Name <br /><input type="text" name="%2$s[%1$s][0]" class="widefat" value="' . $value[0] .'"></input>' .
-	                '<br />Date<br /><input type="text" name="%2$s[%1$s][1]" class="widefat" value="' . $value[1] .'"></input>' .
-	                '<br />Description<br /><input type="text" name="%2$s[%1$s][2]" class="widefat" value="' . $value[2] .'"></input>' .
-	                '<br />Location<br /><input type="text" name="%2$s[%1$s][3]" class="widefat" value="' . $value[3] .'"></input>',
+	                ''. $text_jump . $image_value . '<br />Event Name <br /><input type="text" name="%2$s[%1$s][0]" class="widefat" value="' . $value_0 .'"></input>' .
+	                '<br />Date<br /><input type="text" name="%2$s[%1$s][1]" class="widefat" value="' . $value_1 .'"></input>' .
+	                '<br />Description<br /><input type="text" name="%2$s[%1$s][2]" class="widefat" value="' . $value_2 .'"></input>' .
+	                '<br />Location<br /><input type="text" name="%2$s[%1$s][3]" class="widefat" value="' . $value_3 .'"></input>',
 	                $fields_counter,
 	                $this->get_field_name( 'events' )
 	            );
 	            $fields_counter += 1;
 	        }
 
-        	print 'To remove images once added, select "Remove Image" from the top of the dropdown and click the save button.<br /><br />' . join( '<br />', $fields_html );
+        	print join( '<br />', $fields_html );
         
 	?>
 
@@ -87,6 +112,7 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 	            	if($event[4])
 	            	{
 	            		array_splice($instance['events'], $index, 1);
+	            		
 	            	}
 	            	else
 	            	{
