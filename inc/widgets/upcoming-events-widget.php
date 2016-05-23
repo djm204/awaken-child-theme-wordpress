@@ -26,13 +26,38 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 	 */
 
 	public function form( $instance ) {
-		//print_r($instance);
-		$defaults = array(
-			'title'		=>	__( 'Featured Video', 'awaken' ),
-			'vid_url'	=>	'SQEQr7c0-dw'
-		);
-		$instance = wp_parse_args( (array) $instance, $defaults );
+		$fields = isset ( $instance['events'] ) ? $instance['events'] : array();
+        $field_num = count( $fields );
+        $fields[ $field_num + 1 ] = '';
+        $fields_html = array();
+        $fields_counter = 0;
+        	
+        	foreach ( $fields as $name => $value )
+	        {
 
+	            $image_value = '';
+	            if(($fields_counter+1) != count($fields))
+	            {
+	            	$image_value = '<br />Remove This Event? <input type="checkbox" name="' . $this->get_field_name( 'events' ) . '[' . $fields_counter . '][4]"></input>';
+	            }
+	            else
+	            {
+	            	$image_value = '<br /><hr />Enter a new event<br />';
+	            }
+
+	            $fields_html[] = sprintf(
+	                ''. $image_value .'<br />Event Name <br /><input type="text" name="%2$s[%1$s][0]" class="widefat" value="' . $value[0] .'"></input>' .
+	                '<br />Date<br /><input type="text" name="%2$s[%1$s][1]" class="widefat" value="' . $value[1] .'"></input>' .
+	                '<br />Description<br /><input type="text" name="%2$s[%1$s][2]" class="widefat" value="' . $value[2] .'"></input>' .
+	                '<br />Location<br /><input type="text" name="%2$s[%1$s][3]" class="widefat" value="' . $value[3] .'"></input>',
+	                $fields_counter,
+	                $this->get_field_name( 'events' )
+	            );
+	            $fields_counter += 1;
+	        }
+
+        	print 'To remove images once added, select "Remove Image" from the top of the dropdown and click the save button.<br /><br />' . join( '<br />', $fields_html );
+        
 	?>
 
 		
@@ -55,8 +80,23 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 	
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );	
-		$instance[ 'vid_url' ]	= strip_tags( $new_instance[ 'vid_url' ] );
+		if ( isset ( $new_instance['events'] ) ) {
+	        $index = 0;
+	        foreach ( $new_instance['events'] as $event ) {
+	            if ( '' !== trim( $event[0] ) ) {
+	            	if($event[4])
+	            	{
+	            		array_splice($instance['events'], $index, 1);
+	            	}
+	            	else
+	            	{
+	            		$new_array = array($event[0], $event[1], $event[2], $event[3]);
+	                	$instance['events'][ $index ] = $new_array;
+	                	$index++;
+	            	}
+	            }
+	        }
+	    }
 		return $instance;
 	}
 
@@ -73,26 +113,99 @@ class Desiratech_Upcoming_Events_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract($args);
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';	
-		$vid_url = ( ! empty( $instance['vid_url'] ) ) ? $instance['vid_url'] : '';
+		$first = true;
 
 		echo $before_widget;
-		echo '<!---- contact --->        
-                        <a href="upcoming-events"><h3 class="program-button-red">Upcoming Events</h3></a>
-                            <ul id="events" class="col-md-12">
-                                    <li></span><a href="#">Event 1: 1/2/2016</a></li>
-                                    <li></span><a href="#">Event 2: 4/22/2016</a></li>
-                                    <li></span><a href="#">Event 3: 6/25/2016</a></li>
-                                    <li></span><a href="#">Event 4: 7/23/2016</a></li>
-                            </ul>
-                        </div>
+		?>
+			<div style="animation: none !important;">
+                <a href="upcoming-events"><h3 class="program-button-red">Upcoming Events</h3></a>
+                    	<?php foreach($instance['events'] as $key => $value) : ?>
+                    		<?php if($first){$liClass = ' eventList';} else { $liClass = ' eventList';} ?>
+                    		<?php if($key == 0) : ?>
+                    		<ul id="events" class="col-md-12<?= $liClass ?>">
+                    		<?php endif ?>
+                    		<li data-toggle="modal" data-target="#myEventModal<?=$key?>">Event <?= $key+1 ?>: <?= $value[1] ?></li>
+                    		<?php if(($key+1) % 4 == 0) : ?>
+                    		</ul>
+                    		<?php endif ?>
+                    		<?php if(($key+1) % 4 == 0) : ?>
+                    		<ul id="events" class="col-md-12<?= $liClass ?>">
+                    		<?php endif ?>
+                             
+                            <?php $first = false; ?>
+                            <?php if(($key+1) == count($instance['events']) && !(($key+1) % 4 == 0)) : ?>
+                    		</ul>
+                    		<?php endif ?>
+                        <?php endforeach ?>
+
+
+
                <div id="folklorama">
                     <a href="/folklorama"><img src="' . get_stylesheet_directory_uri() . '/images/folklorama-logo.png" alt="Folklorama Logo" /></a>
                </div>
-           
-        
-    <!---- contact --->';
 
+               <?php foreach($instance['events'] as $key => $value) : ?>
+                	<div id="myEventModal<?=$key?>" class="modal fade" role="dialog">
+		                <div class="modal-dialog">
+
+		                    
+		                    <div class="modal-content">
+		                    <div class="modal-header">
+		                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		                        <h4 class="modal-title">Event: <?= $value[0] ?></h4>
+		                    </div>
+		                    <div class="modal-body text-center">
+		                    	<h3>Time:</h3>
+		                        <p><?= $value[1] ?></p>
+		                       	<h3>Description:</h3>
+		                        <p><?= $value[2] ?></p>
+		                        <h3>Location:</h3>
+		                        <p><?= $value[3] ?></p>
+		                    </div>
+		                    <div class="modal-footer">
+		                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		                    </div>
+		                    </div>
+
+		                </div>
+		            </div>
+               <?php endforeach ?>
+            </div>
+
+            <script>
+            jQuery(function($) {
+
+			    var counter = 0;
+			    var listItems = $('.eventList');
+			    var listItemsCount = listItems.size();
+
+
+			    function showList () {
+			    	if(listItemsCount != 1)
+			    	{
+			        	listItems.hide();
+			    	}
+
+			        var listItem = $('.eventList:eq('+counter+')');
+
+			        listItem.show('fast');
+
+			        counter++;
+			        if(counter == listItemsCount)
+			        {
+			        	counter = 0;
+			        }
+			    };
+
+			    showList();   
+
+			    setInterval(function () {
+			        showList();
+			    }, 7 * 1000);   
+
+			});
+            </script>
+	<?php
 	
 	echo $after_widget;
 	}
