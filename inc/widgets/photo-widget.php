@@ -28,7 +28,7 @@ class Desiratech_Photocarousel_Widget extends WP_Widget {
 	public function form( $instance ) {
 		$fields = isset ( $instance['pictures'] ) ? $instance['pictures'] : array();
         $field_num = count( $fields );
-        $fields[ $field_num + 1 ] = '';
+        $fields[ $field_num ] = '';
         $fields_html = array();
         $fields_counter = 0;
 
