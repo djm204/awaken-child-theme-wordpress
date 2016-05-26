@@ -36,10 +36,12 @@ class Desiratech_Photocarousel_Widget extends WP_Widget {
         if( $images->have_posts() ){ 
         	$i = 0;
         	$options = array();
+        	$selected = '';
         	
         	foreach ( $fields as $name => $value )
 	        {
 	        	$options[$i] = '';
+
 	        	if($value == '')
 	        	{
 	        		$options[$i] .= '<option value="" ' . $selected . '>Select an image to add</option>';
@@ -48,35 +50,44 @@ class Desiratech_Photocarousel_Widget extends WP_Widget {
 	        	{
 	        		$options[$i] .= '<option value="" ' . $selected . '>Remove Image</option>';
 	        	}
+
 	        	while( $images->have_posts() ) {
 	                $images->the_post();
 	                $img_src = wp_get_attachment_image_src(get_the_ID(), 'original');
 
 	                $selected = '';
-	                if($value[0] == $img_src[0])
+
+	                if(($fields_counter+1) != count($fields))
 	                {
-	                    $selected = 'selected="selected"';
+	                	if($value[0] == $img_src[0])
+		                {
+		                    $selected = 'selected="selected"';
+		                }
 	                }
 
 	                //$the_link = $links[$i];
 	                $options[$i] .= '<option value="' . $img_src[0] . '" ' . $selected . '>' . get_the_title() . '</option>';
 	            } 
+	        	
 	            $image_value = '';
+	            $description_value = '';
 	            if(($fields_counter+1) != count($fields))
 	            {
 	            	$image_value = '<br /><img src="'.$value[0].'" width="140" margin-top="10px" />';
+	            	$description_value = $value[1];
 	            }
 	            else
 	            {
 	            	$image_value = '<br /><hr />Select an image here to add to the carousel<br /><br />';
+	            	$description_value = '';
 	            }
 
 	            $fields_html[] = sprintf(
-	                ''. $image_value .'<select type="text" name="%1$s[%2$s][0]" class="widefat">'.$options[$i].'</select><br />Description:<br /><input type="text" name="%1$s[%2$s][1]" value="'.$value[1].'"/>',
+	                ''. $image_value .'<select type="text" name="%1$s[%2$s][0]" class="widefat">'.$options[$i].'</select><br />Description:<br /><input type="text" name="%1$s[%2$s][1]" value="'.$description_value.'"/>',
 	                $this->get_field_name( 'pictures' ),
 	                $fields_counter
 	            );
-	            $fields_counter += 1;
+	            $fields_counter ++;
 	        }
 
         	print 'To remove images once added, select "Remove Image" from the top of the dropdown and click the save button.<br /><br />' . join( '<br />', $fields_html );
