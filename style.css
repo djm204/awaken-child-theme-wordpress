@@ -128,17 +128,15 @@ nav.smaller {
    background: rgba(127,0,0, .8);    
 }
 
-
-
-
 .site-logo {
     float: right;
     position: absolute;
+    background: rgba(0,0,0,.5);
     display: block;
     width: 250px;
     bottom: 0;
     right: 0;
-    padding: 10px;
+    padding: 5px;
     
 }
 

@@ -72,7 +72,7 @@ error_reporting(E_ALL);
 
 	            $fields_html[] = sprintf(
 	                ''. $text_jump . $image_value . '<br />Event Name <br /><input type="text" name="%2$s[%1$s][0]" class="widefat" value="' . $value_0 .'"></input>' .
-	                '<br />Date<br /><input type="text" name="%2$s[%1$s][1]" class="widefat" value="' . $value_1 .'"></input>' .
+	                '<br />Date<br /><input type="date" name="%2$s[%1$s][1]" class="widefat" value="' . $value_1 .'"></input>' .
 	                '<br />Description<br /><input type="text" name="%2$s[%1$s][2]" class="widefat" value="' . $value_2 .'"></input>' .
 	                '<br />Location<br /><input type="text" name="%2$s[%1$s][3]" class="widefat" value="' . $value_3 .'"></input>',
 					
@@ -151,7 +151,7 @@ error_reporting(E_ALL);
                     		<?php if($key == 0) : ?>
                     		<ul id="events" class="col-md-12<?= $liClass ?>">
                     		<?php endif ?>
-                    		<li data-toggle="modal" data-target="#myEventModal<?=$key?>">Event <?= $key+1 ?>: <?= $value[1] ?></li>
+                    		<li data-toggle="modal" data-target="#myEventModal<?=$key?>"> <?= $value[0] ?></li>
                     		<?php if(($key+1) % 4 == 0) : ?>
                     		</ul>
                     		<?php endif ?>
@@ -180,7 +180,7 @@ error_reporting(E_ALL);
 		                        <h4 class="modal-title">Event: <?= $value[0] ?></h4>
 		                    </div>
 		                    <div class="modal-body text-center">
-		                    	<h3>Time:</h3>
+		                    	<h3>Date:</h3>
 		                        <p><?= $value[1] ?></p>
 		                       	<h3>Description:</h3>
 		                        <p><?= $value[2] ?></p>
