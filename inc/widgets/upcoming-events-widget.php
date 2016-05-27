@@ -60,13 +60,13 @@ error_reporting(E_ALL);
 	            	$event_jump = '';
 	            	if($fields_counter+2 == count($fields))
 	            	{
-	            		$event_jump = '<a name="newEventJump"></a>';
+	            		$event_jump = '<div id="newEventJump"></div>';
 	            	}
 	            	$image_value = $event_jump . '<br />Remove This Event? <input type="checkbox" name="' . $this->get_field_name( 'events' ) . '[' . $fields_counter . '][4]"></input>';
 	            }
 	            else
 	            {
-	            	$image_value = '<br /><hr />Enter a new event<br />';
+	            	$image_value = '<br /><hr /><h3>Enter a new event</h3><br />';
 	            	
 	            }
 
@@ -75,6 +75,7 @@ error_reporting(E_ALL);
 	                '<br />Date<br /><input type="text" name="%2$s[%1$s][1]" class="widefat" value="' . $value_1 .'"></input>' .
 	                '<br />Description<br /><input type="text" name="%2$s[%1$s][2]" class="widefat" value="' . $value_2 .'"></input>' .
 	                '<br />Location<br /><input type="text" name="%2$s[%1$s][3]" class="widefat" value="' . $value_3 .'"></input>',
+					
 	                $fields_counter,
 	                $this->get_field_name( 'events' )
 	            );

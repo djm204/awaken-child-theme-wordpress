@@ -26,12 +26,7 @@ class Desiratech_Become_A_Member_Widget extends WP_Widget {
 	 */
 
 	public function form( $instance ) {
-		//print_r($instance);
-		$defaults = array(
-			'title'		=>	__( 'Featured Video', 'awaken' ),
-			'vid_url'	=>	'SQEQr7c0-dw'
-		);
-		$instance = wp_parse_args( (array) $instance, $defaults );
+		//This is the Widgets admin form
 
 	?>
 
