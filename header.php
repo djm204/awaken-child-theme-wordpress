@@ -33,8 +33,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <section>
-                        <a class="navbar-brand-big" href="/"></a>
-                        <img src="<?= get_stylesheet_uri()?>/../images/spanish-club-name-small.png" alt="Spanish Club of Winnipeg" />
+                        <a id="spanish-brand" class="navbar-brand-big" href="/"></a>
                     </section>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
@@ -111,18 +110,14 @@
     window.addEventListener('scroll', function(e){
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
             shrinkOn = 575,
-            navBar = document.querySelector("nav");
-            navBarBrand =  document.querySelector("section");//document.getElementsByClassName("navbar-brand")[0];
+            navBar = document.getElementById("top-navigation");
         if (distanceY > shrinkOn) {
-            classie.add(navBar,"smaller");
-            classie.add(navBarBrand, "smallerImage");
+            classie.add(navBar,"fadeOut");
         } else {
-            if (classie.has(navBar,"smaller")) {
-                classie.remove(navBar,"smaller");
+            if (classie.has(navBar,"fadeOut")) {
+                classie.remove(navBar,"fadeOut");
             }
-            if (classie.has(navBarBrand,"smallerImage")) {
-                classie.remove(navBarBrand,"SmallerImage");
-            }
+
         }
     });
 }

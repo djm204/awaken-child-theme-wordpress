@@ -167,9 +167,7 @@ error_reporting(E_ALL);
 
 
 
-               <div id="folklorama">
-                    <a href="/folklorama"><img src="' . get_stylesheet_directory_uri() . '/images/folklorama-logo.png" alt="Folklorama Logo" /></a>
-               </div>
+              
 
                <?php foreach($instance['events'] as $key => $value) : ?>
                 	<div id="myEventModal<?=$key?>" class="modal fade" role="dialog">
@@ -198,6 +196,10 @@ error_reporting(E_ALL);
 		            </div>
                <?php endforeach ?>
             </div>
+			
+			 <div id="folklorama">
+                    <a href="/folklorama"><img src="<?=get_stylesheet_directory_uri()?>/images/folklorama-logo.png" alt="Folklorama Logo" /></a>
+               </div>
 
             <script>
             jQuery(function($) {

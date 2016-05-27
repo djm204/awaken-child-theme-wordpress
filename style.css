@@ -12,8 +12,10 @@
  Text Domain:  awaken-child
 */
 #wpadminbar{
-    z-index: -1 !important;
+    z-index: -1;
 }
+
+/*COMMENT OUT ABOVE BEFORE GOING LIVE*/
 /*BootStrap Override*/
 .row{
     margin-left: 0px !important;
@@ -74,6 +76,7 @@ header {
     position: relative;
     background-size: cover;
     width: 100%;
+    min-height: 500px;
     overflow: hidden;
     top: 0;
     left: 0;
@@ -129,19 +132,14 @@ nav.smaller {
 
 
 .site-logo {
-    float: none;
+    float: right;
+    position: absolute;
     display: block;
-    width: 500px;
-    background: rgba(0,0,0,.5);
-    border-radius: 50px;
-    margin: 4% auto;
-    padding: 20px;
-    padding-top:50px;
+    width: 250px;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
     
-}
-
-.site-logo > a > img {
-    max-width: 450px;
 }
 
 .site-footer{
@@ -163,16 +161,20 @@ nav.smaller {
     background-size: contain;
 }
 
-.navbar-brand-small {
-    display: block;
-    width: 75px;
-    margin-top: 10px;
-    margin-left: 10px;
-    background: url('images/spain-flag-branding.png') no-repeat;
-    background-size: contain;
+#top-navigation.fadeOut{
+    opacity: 0;
 }
 
+#top-navigation{
+    color: #FFFFFF;
+    text-align: center;
 
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+     opacity: 1;
+}
 
 nav{
     background: darkred;
@@ -342,6 +344,7 @@ nav{
 #events{
     list-style: none;
     padding: 0;
+    margin-top:0px;
 }
 
 .contact-icon{
@@ -352,23 +355,18 @@ nav{
 /*Events */
 #events li{
     border-top: 1px solid #ccc;
-    
+     padding: 10px 5px;
+    display: block;
     list-style: none;
     margin-left: 0;
-}
-
-#events li a{
-    padding: 10px 5px;
-    display: block;
 }
 
 #events li:hover{
     background: #ddd;
 }
 
-#events li:last-of-type{
-    border-bottom: 1px solid #ccc;    
-    margin:0;
+#events li:first-of-type{
+    border:0;    
 }
 
  /* Google Maps */
@@ -405,6 +403,33 @@ nav{
     padding-top: 20px;
 }
 
+
+@media (min-width: 768px) and (max-width: 1190px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
+    
+     .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
 
 @media all and (max-width: 768px){
     .site-logo > a > img {
