@@ -179,7 +179,7 @@ error_reporting(E_ALL);
 		                        <button type="button" class="close" data-dismiss="modal">&times;</button>
 		                        <h4 class="modal-title">Event: <?= $value[0] ?></h4>
 		                    </div>
-		                    <div class="modal-body text-center">
+		                    <div class="modal-body">
 		                    	<h3>Date:</h3>
 		                        <p><?= $value[1] ?></p>
 		                       	<h3>Description:</h3>
