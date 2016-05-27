@@ -154,7 +154,7 @@ error_reporting(E_ALL);
                     		<?php if(($key+1) % 4 == 0) : ?>
                     		</ul>
                     		<?php endif ?>
-                    		<?php if(($key+1) % 4 == 0) : ?>
+                    		<?php if(($key+1) % 4 == 0 && ($key+1) != count($instance['events'])) : ?>
                     		<ul id="events" class="col-md-12<?= $liClass ?>">
                     		<?php endif ?>
                              
