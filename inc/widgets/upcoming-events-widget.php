@@ -34,6 +34,7 @@ error_reporting(E_ALL);
         $fields[ $field_num ] = '';
         $fields_html = array();
         $fields_counter = 0;
+		
         	
         	foreach ( $fields as $name => $value )
 	        {
@@ -68,13 +69,13 @@ error_reporting(E_ALL);
 	            {
 	            	$image_value = '<br /><hr /><h3>Enter a new event</h3><br />';
 	            	
-	            }
+	            } 
 
 	            $fields_html[] = sprintf(
-	                ''. $text_jump . $image_value . '<br />Event Name <br /><input type="text" name="%2$s[%1$s][0]" class="widefat" value="' . $value_0 .'"></input>' .
-	                '<br />Date<br /><input type="date" name="%2$s[%1$s][1]" class="widefat" value="' . $value_1 .'"></input>' .
-	                '<br />Description<br /><input type="text" name="%2$s[%1$s][2]" class="widefat" value="' . $value_2 .'"></input>' .
-	                '<br />Location<br /><input type="text" name="%2$s[%1$s][3]" class="widefat" value="' . $value_3 .'"></input>',
+	                ''. $text_jump . $image_value . '<h5>Event Name</h5><input type="text" name="%2$s[%1$s][0]" class="widefat" value="' . $value_0 .'"></input>' .
+	                '<h5>Date</h5><input type="date" name="%2$s[%1$s][1]" class="widefat" value="' . $value_1 .'"></input>' .
+	                '<h5>Description</h5><input type="text" name="%2$s[%1$s][2]" class="widefat" value="' . $value_2 .'"></input>' .
+	                '<h5>Location</h5><input type="text" name="%2$s[%1$s][3]" class="widefat" value="' . $value_3 .'"></input>',
 					
 	                $fields_counter,
 	                $this->get_field_name( 'events' )

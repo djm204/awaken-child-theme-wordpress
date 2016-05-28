@@ -266,7 +266,8 @@ nav{
 }
 
 .photo-gal-thumb img{
-    width: 100%;
+    width: 150px;
+    height: 150px;
 }
 
 
@@ -374,6 +375,13 @@ nav{
 }
 
  /* Google Maps */
+ .google-address-info{
+     color: black;
+ }
+ 
+ .google-address-info a{
+     color: blue;
+ } 
  
 #spanishclub {
     margin-top: 40px !important;
@@ -411,8 +419,8 @@ nav{
     width: 100%
 }
 
-.footer-widget-area.menu{
-    margin-top: 30px;
+.bottom-menu{
+    margin-top: 150px;
 }
 
 .more-link{
@@ -435,7 +443,7 @@ nav{
 /* HEADER BACKGROUND MOBILE RESPONSIVENESS END*/
 
 
-@media (min-width: 768px) and (max-width: 1190px) {
+@media (min-width: 768px) and (max-width: 1200px) {
     .navbar-collapse.collapse {
         display: none !important;
     }

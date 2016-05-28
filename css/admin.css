@@ -3,3 +3,11 @@
     max-width: 150px;
     max-height: 150px;
 }
+
+#program-info-3 form h5, #program-info-3 form h3{
+    margin: 0px;
+}
+
+#program-info-3 form h3{
+    margin-bottom: 5px;
+}

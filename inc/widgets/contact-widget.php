@@ -100,16 +100,25 @@ class Desiratech_Contact_Widget extends WP_Widget {
 		$facebook = ( ! empty( $instance['facebook'] ) ) ? $instance['facebook'] : '';
 
 		echo $before_widget;
-		echo '<div id="contact-info">
+		?><div id="contact-info">
 
                         <h3>Contact Info</h3>
                             <ul >
-                                    <li><span class="contact-icon glyphicon glyphicon-home "></span>'.$address.'</li>
-                                    <li><span class="contact-icon glyphicon glyphicon-earphone "> </span><a href="tel:'.$phone_number.'">'.$phone_number.'</a></li>
-                                    <li><span class="contact-icon glyphicon glyphicon-envelope "> </span><a href="mailto:'.$email.'">'.$email.'</a></li>
-                                    <li><span class="contact-icon fa fa-facebook "> </span><a href="https://facebook.com/'.$facebook.'">facebook.com/'.$facebook.'</a></li>
+                                    <li><span class="contact-icon glyphicon glyphicon-home "></span><?=$address?></li>
+                                    <li><span class="contact-icon glyphicon glyphicon-earphone "> </span><a href="tel:<?=$phone_number?>"><?=$phone_number?></a></li>
+                                    <li><span class="contact-icon glyphicon glyphicon-envelope "> </span><a href="mailto:'.$email.'"><?=$email?></a></li>
+                                    <li><span class="contact-icon fa fa-facebook "> </span><a href="https://facebook.com/<?=$facebook?>">facebook.com/<?=$facebook?></a></li>
                             </ul>
-                </div>';
+                </div>
+				<div class="bottom-menu">
+					<ul>
+						<li><a href="/about-us">About</a></li>
+						<li><a href="/links">Links</a></li>						
+						<li><a href="/login">Members Login</a></li>
+					</ul>
+				</div>
+				
+				<?php
 	
 	echo $after_widget;
 	}

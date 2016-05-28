@@ -84,8 +84,10 @@
         new WOW().init();
     
 function initialize() {
+	var contentString = '<div class="google-address-info"><h5>Spanish Club of Winnipeg</h5>677 Selkirk Ave.<br/> Winnipeg, MB R2W 2N4 <br/><br/>'+
+	'<a href="https://goo.gl/maps/Bg91V9QM99m" target="_blank">Open in Google Maps</a></div>'
   var infowindow = new google.maps.InfoWindow({
-    content:"Hello World!"
+    content: contentString
   });
   var myCenter = {lat: 49.917986, lng: -97.151933};  
   var marker = new google.maps.Marker({
