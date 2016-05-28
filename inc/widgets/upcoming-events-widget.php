@@ -146,6 +146,7 @@ error_reporting(E_ALL);
 		?>
 			<div style="animation: none !important;">
                 <a href="upcoming-events"><h3 class="program-button-red">Upcoming Events</h3></a>
+				<div class="events-wrapper" >
                     	<?php foreach($instance['events'] as $key => $value) : ?>
                     		<?php if($first){$liClass = ' eventList';} else { $liClass = ' eventList';} ?>
                     		<?php if($key == 0) : ?>
@@ -164,6 +165,7 @@ error_reporting(E_ALL);
                     		</ul>
                     		<?php endif ?>
                         <?php endforeach ?>
+					</div>
 
 
 
@@ -212,12 +214,12 @@ error_reporting(E_ALL);
 			    function showList () {
 			    	if(listItemsCount != 1)
 			    	{
-			        	listItems.hide();
+			        	listItems.slideUp();
 			    	}
 
 			        var listItem = $('.eventList:eq('+counter+')');
 
-			        listItem.show('fast');
+			        listItem.slideDown();
 
 			        counter++;
 			        if(counter == listItemsCount)

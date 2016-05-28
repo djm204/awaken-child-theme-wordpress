@@ -71,8 +71,9 @@ ul {
 /* header */
 
 header {
-    background: url('images/spainlandscape.jpg') 50% 0 no-repeat fixed;
-    background-position-y: -350px;
+    background: url('images/spainlandscape.jpg') no-repeat fixed;
+    background-position-y: -225px;
+    background-size: 100% 100%;
     position: relative;
     background-size: cover;
     width: 100%;
@@ -242,22 +243,25 @@ nav{
     color: white;
 }
 
+
+
 .photo-gal-thumb{
     display: inline-block;
     border: 1px solid black;
-    min-width: 200px;
-    max-width: 200px;
-    min-height: 200px;
-    max-height: 200px;
-    margin-left: 5px;
+    min-width: 150px;
+    max-width: 150px;
+    min-height: 150px;
+    max-height: 150px;
     margin-top: 5px;
     cursor: pointer;
     box-sizing: border-box;
 }
 
+.thumb-wrapper{
+    padding:0px;
+}
 
-
-.photo-gal-thumb:first-of-type{
+.photo-gal-thumb{
     margin-left: 0;
 }
 
@@ -336,8 +340,11 @@ nav{
 }
 
 /*contact us */
+.contact-icon{
+    width: 20px;
+}
 
-
+/*Events */
 
 #events{
     list-style: none;
@@ -345,12 +352,7 @@ nav{
     margin-top:0px;
 }
 
-.contact-icon{
-    width: 20px;
-    margin-right: 10px;
-}
 
-/*Events */
 #events li{
     border-top: 1px solid #ccc;
      padding: 10px 5px;
@@ -365,6 +367,10 @@ nav{
 
 #events li:first-of-type{
     border:0;    
+}
+
+.events-wrapper{
+    min-height: 164px;
 }
 
  /* Google Maps */
@@ -400,6 +406,33 @@ nav{
 .footer-widget-area {
     padding-top: 20px;
 }
+
+.footer-widget-area ul li {
+    width: 100%
+}
+
+.footer-widget-area.menu{
+    margin-top: 30px;
+}
+
+.more-link{
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+/* widgets */
+/* HEADER BACKGROUND MOBILE RESPONSIVENESS START*/
+@media (min-width: 1700px) {
+    header {
+        background-position-y: -500px;
+    }
+    
+}
+
+
+/* HEADER BACKGROUND MOBILE RESPONSIVENESS END*/
 
 
 @media (min-width: 768px) and (max-width: 1190px) {

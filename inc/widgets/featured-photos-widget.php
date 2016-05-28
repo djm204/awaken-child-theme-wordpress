@@ -124,9 +124,7 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
       
     echo $before_widget;
       ?>
-      <div class="col-xs-12">
           <h3> Featured Photos</h3>
-          <div class="thumb-wrapper">
         
        <!-- Display images --><?php 
       if( !( $link) ) {
@@ -139,34 +137,34 @@ class Desiratech_Featured_Photos_Widget extends WP_Widget {
             <div class="photo-gal-thumb" data-toggle="modal" data-target="#myModal<?=$i?>">
               <img src="<?php echo $link[$i]; ?>" alt="">
             </div>
+            
+            
           <!-- Modal -->
             <div id="myModal<?=$i?>" class="modal fade " role="dialog">
                 <div class="modal-dialog">
 
                     <!-- Modal content-->
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body text-center">
-                        <img src="<?php echo $link[$i]; ?>" alt="">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+                        
+                        <div class="modal-body text-center">
+                            <img src="<?php echo $link[$i]; ?>" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
 
                 </div>
             </div>
           
-          
+
           <?php }
           }
       } 
-  
-      echo '<a href="/photo-gallery">...More</a></div>
-      </div>';
+  ?>
+  <a class="more-link" href="/photo-gallery" >...more</a>
+  <?php
+     
   echo $after_widget;
   }
 
