@@ -12,7 +12,12 @@
  Text Domain:  awaken-child
 */
 #wpadminbar{
-    z-index: -1;
+    top:auto;
+    bottom:0;
+}
+
+#wp-admin-bar-user-actions{
+    bottom:0 !important;
 }
 
 /*COMMENT OUT ABOVE BEFORE GOING LIVE*/
@@ -21,7 +26,9 @@
     margin-left: 0px !important;
     margin-right: 0px !important;
 }
-
+.entry-content{
+    min-height: 300px;
+}
 .visible{
     visibility: visible;
 }
@@ -113,6 +120,10 @@ nav a {
     font-weight: 700;
     font-size: 1.2em;
    
+}
+
+.side-bar-right{
+    float:right;
 }
 
 .awaken-search-button-icon{
@@ -360,6 +371,7 @@ nav{
     display: block;
     list-style: none;
     margin-left: 0;
+    cursor: pointer;
 }
 
 #events li:hover{
@@ -443,7 +455,7 @@ nav{
 /* HEADER BACKGROUND MOBILE RESPONSIVENESS END*/
 
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media  (max-width: 1200px) {
     .navbar-collapse.collapse {
         display: none !important;
     }
@@ -456,17 +468,18 @@ nav{
     .navbar-header {
         float:none;
     }
-    
+
+    .navbar-nav > li > a {
+        line-height: 35px;
+    }
      .navbar-nav {
         float: none!important;
         margin: 7.5px -15px;
     }
     .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        float: left;
+        width: 50%;
+        text-align: left;
     }
 }
 
@@ -479,11 +492,7 @@ nav{
         width: 300px;
         
     }
-    
-    nav a {
-        line-height: 35px !important;
-    }
-    
+
     .awaken-search-button-icon{
         top: 50px;
         right: 10px;
@@ -503,6 +512,12 @@ nav{
     
     nav.smaller a {
         line-height: 35px;
+    }
+}
+
+@media  (max-width: 1200px) {
+    #navbar {
+        font-size: .8em;
     }
 }
 
